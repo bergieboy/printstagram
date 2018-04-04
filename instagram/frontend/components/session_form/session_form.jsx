@@ -30,35 +30,42 @@ class SessionForm extends React.Component {
         <div className = 'main_session_box'>
           <div className = 'session_logo_text' >
             <h3>Printstagram</h3>
+            <h2>{this.props.formHeader}</h2>
           </div>
           <div className = 'session_inputs'>
-            <h2>{this.props.formHeader}</h2>
             <form onSubmit={this.handleSubmit}>
-              <h2></h2>
-              <div className = 'username_input'>
-                <label>Username:
-                  <input
-                    type='text'
-                    value={this.state.username}
-                    onChange={this.update('username')} />
-                </label>
-              </div>
-              <div className = 'password_input'>
-                <label>Password:
-                  <input
-                    type='password'
-                    value={this.state.password}
-                    onChange={this.update('password')} />
-                </label>
-              </div>
-              <div>
-                <input type='submit' value={this.props.formType} />
+              <div className = 'inputs'>
+                <div className = 'username_input'>
+                  <label>Username
+                    <input
+                      type='text'
+                      value={this.state.username}
+                      onChange={this.update('username')} />
+                  </label>
+                </div>
+                <div className = 'password_input'>
+                  <label>Password
+                    <input
+                      type='password'
+                      value={this.state.password}
+                      onChange={this.update('password')} />
+                  </label>
+                </div>
+                <div className = 'submit-button'>
+                  <input type='submit' value={this.props.formType} />
+                </div>
+                <div className = 'or-box'>
+                  <div className = 'strikethrough' ></div>
+                  <div className = 'or'>OR</div>
+                  <div className = 'strikethrough' ></div>
+                </div>
               </div>
             </form>
           </div>
-          <div className = 'alternative_session_option' >
-            <p>{this.props.formAlt}{this.props.navLink}</p>
-          </div>
+        </div>
+        <div className = 'alternative_session_option' >
+          <div className='question'>{this.props.formAlt}</div>
+          <div className='question-option'>{this.props.navLink}</div>
         </div>
       </div>
     );
