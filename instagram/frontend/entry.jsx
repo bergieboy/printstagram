@@ -17,7 +17,7 @@ if (window.currentUser) {
 
   // Testing
   // window.login = login;
-  window.logout = logout;
+  // window.logout = logout;
   // window.singup = signup;
   window.getState = store.getState;
   window.dispatch = store.dispatch;

@@ -24,16 +24,19 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  // renderErrors(){
-  //   if (this.props.errors) {
-  //     debugger;
-  //     const errorItems = this.props.errors.map( (error, i) => {
-  //       return (<li key={`${i}`}>{error}</li>);
-  //     });
-  //   }
-  // }
+  renderErrors() {
+    if (this.props.errors){
+    return (
+      <ul className="errors">
+        {this.props.errors.map((error, i) => (
+          <li key = {`${i}`}>{error}</li>))}
+      </ul>
+        );
+      }
+    }
 
   render(){
+    console.log(this.props.errors);
     return (
       <div className='session_master'>
         <div className = 'session_img'>
@@ -48,7 +51,7 @@ class SessionForm extends React.Component {
               <form onSubmit={this.handleSubmit}>
                 <div className = 'inputs'>
                   <div className = 'username_input'>
-                    <label>Username
+                    <label><div className='label-text'>Username</div>
                       <input
                         type='text'
                         value={this.state.username}
@@ -56,7 +59,7 @@ class SessionForm extends React.Component {
                     </label>
                   </div>
                   <div className = 'password_input'>
-                    <label>Password
+                    <label><div className='label-text'>Password</div>
                       <input
                         type='password'
                         value={this.state.password}
@@ -72,7 +75,12 @@ class SessionForm extends React.Component {
                     <strike className = 'strikethrough' ></strike>
                   </div>
                   <div className = 'submit-button'>
-                    <button onClick={() => this.props.demoLogin()}>Demo Log in</button>
+                    <button onClick={() => this.props.demoLogin()}>
+                      Demo Log in
+                    </button>
+                  </div>
+                  <div>
+                    {this.renderErrors()}
                   </div>
                 </div>
               </form>

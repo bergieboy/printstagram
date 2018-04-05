@@ -7,6 +7,7 @@ body {
 .session_master {
   display: flex;
   justify-content: center;
+  margin-top: 65px;
 
   .session_img {
     max-height: 100%;
@@ -16,6 +17,7 @@ body {
     border: 1px solid $box-border-gray;
     border-radius: 1px;
     margin-bottom: 10px;
+    box-shadow: 1px 1px 1px $text-light-gray;
   }
   .session_form {
     position: relative;
@@ -55,6 +57,20 @@ body {
         margin: 0 auto;
       }
 
+      .errors {
+        margin-top: 10px;
+        color: red;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .label-text {
+        color: $text-light-gray;
+        font-size: 12px;
+        transform: translateY(-10px);
+      }
+
       .username_input {
         font-size: 12px;
         background: $app-background-gray;
@@ -64,7 +80,6 @@ body {
         margin: 0 40px 6px;
         padding: 12px 0px 12px 12px;
         text-overflow: ellipsis;
-
       }
 
       .password_input {
@@ -80,6 +95,7 @@ body {
       }
 
       .submit-button {
+        display: block;
         background: $link-blue;
         color: $box-background-gray;
         border-radius: 3px;
