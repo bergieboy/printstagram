@@ -7,20 +7,20 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
-import { AuthRoute } from './../util/route_util';
+import { AuthRoute, ProtectedRoute } from './../util/route_util';
 
-import NavBarTempContainer from './navbar_temp/navbar_temp_container';
+import NavBarTempContainer from './navbar/navbar_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 
 const App = () => (
   <div>
     <header>
-      <NavBarTempContainer />
+      <ProtectedRoute path="/" component={NavBarTempContainer} />
     </header>
     <Switch>
-      <AuthRoute path="/login" component={LoginFormContainer} />
-      <AuthRoute path="/signup" component={SignupFormContainer} />
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
     </Switch>
   </div>
 );

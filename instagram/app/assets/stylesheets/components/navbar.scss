@@ -1,0 +1,92 @@
+$logo-icon: image_path("Antu_folder-camera.png");
+$sprite: image_path("sprite.png");
+
+body {
+  background: $app-background-gray;
+}
+
+.header-group {
+  display: flex;
+  justify-content: space-around;
+  font-family: $default-font;
+  background-color: $box-background-gray;
+  border-bottom: 1px solid $box-border-gray;
+  height: 77px;
+
+  .logo-group{
+    position: relative;
+    top: 4%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 8%;
+
+    .logo-icon {
+      height: 40px;
+      width: 40px;
+      background-image: url($logo-icon);
+      background-size: contain;
+      margin: 10px 20px;
+      position: relative;
+    }
+
+    .vl {
+      border-left: 0.1em solid black;
+      height: 40px;
+      position: relative;
+      top: 18%;
+    }
+
+    .header-name {
+      font-size: 24px;
+      font-family: $pacifico;
+      margin: 10px 20px;
+
+    }
+
+  }
+
+  .add-photo {
+    min-width: 200px;
+
+    button {
+      font-size: 14px;
+      width: 215px;
+      color: $text-light-gray;
+      background-color: $app-background-gray;
+      border: 1px solid $box-border-gray;
+      border-radius: 3px;
+      height: 24px;
+      margin: 25px 25px 25px -20px;
+      text-align: center;
+      padding: 4px;
+    }
+
+  }
+
+  .nav-links {
+    display: flex;
+    height: 38px;
+    width: 180px;
+    margin-right: 10%;
+    margin-top: 20px;
+    background-image: url($sprite);
+    background-size: cover;
+
+    .discover-pg {
+      height: 40px;
+      width:60px;
+    }
+
+    .notifications-pg {
+      height: 40px;
+      width:60px;
+    }
+
+    .profile-pg {
+      height: 40px;
+      width:60px;
+    }
+
+
+  }
+}

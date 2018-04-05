@@ -67,7 +67,9 @@ class SessionForm extends React.Component {
                     </label>
                   </div>
                   <div className = 'submit-button'>
-                    <input type='submit' value={this.props.formType} />
+                    <button type='submit'>
+                      {this.props.formType}
+                    </button>
                   </div>
                   <div className = 'or-box'>
                     <strike className = 'strikethrough' ></strike>

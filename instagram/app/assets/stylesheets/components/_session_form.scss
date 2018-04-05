@@ -11,7 +11,7 @@ body {
 
   .session_img {
     max-height: 100%;
-    width: 500px;
+    width: 450px;
     background-image: url($splash);
     background-position: top;
     border: 1px solid $box-border-gray;
@@ -109,6 +109,10 @@ body {
         white-space: nowrap;
         text-align: center;
         margin: 12px 40px 6px;
+
+        button {
+          width: 100%;
+        }
       }
 
       .or-box {
