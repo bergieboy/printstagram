@@ -24,10 +24,16 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
+  // renderErrors(){
+  //   if (this.props.errors) {
+  //     debugger;
+  //     const errorItems = this.props.errors.map( (error, i) => {
+  //       return (<li key={`${i}`}>{error}</li>);
+  //     });
+  //   }
+  // }
+
   render(){
-    // const errorItems = this.props.errors.map( (i, error) => {
-    //   return (<li key={`${i}`}>{error}</li>);
-    // });
     return (
       <div className='session_master'>
         <div className = 'session_img'>
@@ -67,8 +73,6 @@ class SessionForm extends React.Component {
                   </div>
                   <div className = 'submit-button'>
                     <button onClick={() => this.props.demoLogin()}>Demo Log in</button>
-                  </div>
-                  <div className = 'errors'>
                   </div>
                 </div>
               </form>
