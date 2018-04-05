@@ -1,108 +1,136 @@
+$splash: image_path("bellingham.jpg");
+
 body {
   background: $app-background-gray;
 }
-.session_form {
-  position: relative;
-  font-family: $default-font;
-  max-width: 350px;
-  margin: 0 auto;
 
-  .session_inputs {
-    padding: 40px 5px;
-  }
+.session_master {
+  display: flex;
+  justify-content: center;
 
-  .session_logo_text h3 {
-    font-size: 40px;
-    font-family: $pacifico;
-    width: 100%;
-    text-align: center;
+  .session_img {
+    max-height: 100%;
+    width: 500px;
+    background-image: url($splash);
+    background-position: top;
+    border: 1px solid $box-border-gray;
+    border-radius: 1px;
+    margin-bottom: 10px;
   }
-  .session_logo_text h2 {
-    font-weight: 600;
-    line-height: 20px;
-    font-size: 17px;
-    margin: 0 40px 10px;
+  .session_form {
+    position: relative;
     font-family: $default-font;
-    margin: 0 40px 6px;
-    text-align: center;
-    color: $text-light-gray;
-  }
-  .main_session_box {
-    height: 400px;
-    background-color: $box-background-gray;
-    border: 1px solid $box-border-gray;
-    border-radius: 1px;
-    margin: 0 0 10px;
-    padding: 10px 0;
-    height: 400px;
+    width: 360px;
+    margin: auto 20px;
 
+    .session_inputs {
+      padding: 40px 5px;
+    }
 
-    .inputs {
+    .session_logo_text h3 {
+      font-size: 40px;
+      font-family: $pacifico;
       width: 100%;
-      margin: 0 auto;
+      text-align: center;
     }
-
-    .username_input {
-      font-size: 12px;
-      background: $app-background-gray;
-      border: 1px solid $box-border-gray;
-      border-radius: 1px;
-      overflow: hidden;
-      margin: 0 40px 6px;
-      padding: 12px 0px 12px 12px;
-      text-overflow: ellipsis;
-
-    }
-
-    .password_input {
-      font-size: 12px;
-      background: $app-background-gray;
-      border: 1px solid $box-border-gray;
-      border-radius: 1px;
-      overflow: hidden;
-      margin: 0 40px 6px;
-      padding: 12px 0px 12px 12px;
-      text-overflow: ellipsis;
-
-    }
-
-    .submit-button {
-      background: $link-blue;
-      color: $box-background-gray;
-      border-radius: 1px;
-      border-radius: 3px;
-      border: 1px solid $link-blue;
-      font-size: 14px;
+    .session_logo_text h2 {
       font-weight: 600;
-      line-height: 26px;
-      outline: 0;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      line-height: 20px;
+      font-size: 17px;
+      margin: 0 40px 10px;
+      font-family: $default-font;
+      margin: 0 40px 6px;
       text-align: center;
-      margin: 12px 40px 6px;
+      color: $text-light-gray;
+    }
+    .main_session_box {
+      background-color: $box-background-gray;
+      border: 1px solid $box-border-gray;
+      border-radius: 1px;
+      margin: 0 0 10px;
+
+
+      .inputs {
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .username_input {
+        font-size: 12px;
+        background: $app-background-gray;
+        border: 1px solid $box-border-gray;
+        border-radius: 1px;
+        overflow: hidden;
+        margin: 0 40px 6px;
+        padding: 12px 0px 12px 12px;
+        text-overflow: ellipsis;
+
+      }
+
+      .password_input {
+        font-size: 12px;
+        background: $app-background-gray;
+        border: 1px solid $box-border-gray;
+        border-radius: 1px;
+        overflow: hidden;
+        margin: 0 40px 6px;
+        padding: 12px 0px 12px 12px;
+        text-overflow: ellipsis;
+
+      }
+
+      .submit-button {
+        background: $link-blue;
+        color: $box-background-gray;
+        border-radius: 3px;
+        border: 1px solid $link-blue;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 26px;
+        outline: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+        margin: 12px 40px 6px;
+      }
+
+      .or-box {
+        font-weight: bold;
+        color: $text-light-gray;
+        display: flex;
+        justify-content: space-around;
+        margin: 30px;
+        text-align: center;
+
+        .strikethrough {
+          flex-grow: 1;
+          flex-shrink: 1;
+          background-color: #c7c7c7;
+          height: 1px;
+          position: relative;
+          top: .50em;
+        }
+      }
+
     }
 
-    .or-box {
-      margin: 10px;
+    .alternative_session_option {
+      display: flex;
+      justify-content: center;
+      background-color: $box-background-gray;
+      border: 1px solid $box-border-gray;
+      border-radius: 1px;
+      margin: 0 0 10px;
+      padding: 20px 0px;
       text-align: center;
+
+      .question-option {
+        padding-left: 1%;
+        white-space: nowrap;
+        color: $link-blue;
+      }
     }
 
   }
-
-  .alternative_session_option {
-    display: flex;
-    justify-content: center;
-    background-color: $box-background-gray;
-    border: 1px solid $box-border-gray;
-    border-radius: 1px;
-    margin: 0 0 10px;
-    padding: 12px 0px;
-    text-align: center;
-
-    .question-option {
-      padding-left: 5%;
-    }
-  }
-
 }
