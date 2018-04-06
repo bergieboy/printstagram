@@ -35,6 +35,10 @@ class SessionForm extends React.Component {
       }
     }
 
+  componentDidMount(){
+    this.props.fetchUsers();
+  }
+
   render(){
     console.log(this.props.errors);
     return (

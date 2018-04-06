@@ -3,6 +3,10 @@ class User < ApplicationRecord
   validates :username, :session_token, :password_digest, presence: true
   validates :username, uniqueness: true
 
+  # paperclip validations
+  has_attached_file :img_url, default_url: "missing_profile.png"
+  validates_attachment_content_type :img_url, content_type: /\Aimage\/.*\Z/
+
   after_initialize :ensure_session_token
 
   has_many :photos,

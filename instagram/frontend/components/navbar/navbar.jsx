@@ -28,11 +28,12 @@ const NavBar = ({currentUser, logout}) => (
       <div className="nav-links">
         <Link to='/' className='discover-pg'></Link>
         <Link to='/' className='notifications-pg'></Link>
-        <Link to='/' className='profile-pg'></Link>
+        <Link to='/profile' className='profile-pg'></Link>
       </div>
     </hgroup>
     <section>
       <button className="header-button" onClick={logout}>Log Out</button>
+      <img className='profile-pic' src={currentUser.img_url}/>
     </section>
   </div>
 );
