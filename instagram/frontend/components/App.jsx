@@ -13,18 +13,20 @@ import NavBarTempContainer from './navbar/navbar_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import UserProfileContainer from './user_profile/user_profile_container';
+import EditProfileContainer from './user_profile/edit_profile_container';
 
 const App = () => (
 
   <div>
-    <Switch>
-      <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <AuthRoute exact path="/signup" component={SignupFormContainer} />
-    </Switch>
     <header>
       <ProtectedRoute path="/" component={NavBarTempContainer} />
     </header>
-    <Route path="/profile" component={UserProfileContainer} />
+    <Switch>
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <Route exact path="/:username" component={UserProfileContainer} />
+      <Route path="/:username/edit" component={EditProfileContainer} />
+    </Switch>
   </div>
 );
 

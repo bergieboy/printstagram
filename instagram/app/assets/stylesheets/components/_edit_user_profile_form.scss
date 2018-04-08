@@ -1,0 +1,199 @@
+.edit-user-form {
+  display: flex;
+  font-family: $default-font;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  margin: 60px auto 0;
+  max-width: 935px;
+  overflow: hidden;
+  width: 100%;
+
+  .edit-user-title {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    height: 100%;
+    line-height: 20px;
+    padding: 25px;
+    flex-basis: 236px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    text-align: center;
+  }
+
+  form {
+    border-left: 1px solid #dbdbdb;
+    flex: 1 1 400px;
+    width: 100%;
+    margin-bottom: 25px;
+
+    .edit-user-profile-pic {
+      display: flex;
+      width: 100%;
+      margin: 32px 0 16px;
+      justify-content: center;
+      .edit-user-pic {
+        flex: 1;
+        height: 38px;
+
+        img {
+          height: 100%;
+          width: 38px;
+          float: right;
+          margin-right: 10%;
+          border: 1px solid $box-border-gray;
+          border-radius: 50%;
+        }
+      }
+      .edit-form-user-info {
+        flex: 2;
+        justify-content: center;
+        h1 {
+          font-size: 24px;
+          font-weight: 400;
+          line-height: 38px;
+        }
+        .edit-profile-pic-link {
+          color: #3897f0;
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+    }
+
+    .submit-button {
+      width: 15%;
+      display: block;
+      background: $link-blue;
+      color: $box-background-gray;
+      border-radius: 3px;
+      border: 1px solid $link-blue;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 26px;
+      outline: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-align: center;
+      margin: 12px 30% 6px;
+
+      button {
+        width: 100%;
+      }
+    }
+
+    .edit-user-inputs {
+      min-width: 50px;
+
+      .username {
+        display: flex;
+
+        aside {
+          flex: 1;
+          box-sizing: border-box;
+          color: #262626;
+          box-flex: 0;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 18px;
+          padding-right: 32px;
+          text-align: right;
+          margin-top: 6px;
+          flex: 0 0 194px;
+          margin-bottom: 16px;
+        }
+
+        .username-input {
+          flex: 1;
+          padding-right: 60px;
+          input {
+            background: 0 0;
+            border: 1px solid #efefef;
+            border-radius: 3px;
+            box-sizing: border-box;
+            color: #262626;
+            flex: 0 1 355px;
+            font-size: 16px;
+            height: 32px;
+            padding: 0 10px;
+          }
+        }
+      }
+
+      .name {
+        display: flex;
+        aside {
+          flex: 1;
+          box-sizing: border-box;
+          color: #262626;
+          box-flex: 0;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 18px;
+          padding-right: 32px;
+          text-align: right;
+          margin-top: 6px;
+          flex: 0 0 194px;
+          margin-bottom: 16px;
+        }
+
+        .name-input {
+          flex: 1;
+          padding-right: 60px;
+          input {
+            background: 0 0;
+            border: 1px solid #efefef;
+            border-radius: 3px;
+            box-sizing: border-box;
+            color: #262626;
+            flex: 0 1 355px;
+            font-size: 16px;
+            height: 32px;
+            padding: 0 10px;
+          }
+        }
+      }
+
+      .bio {
+        display: flex;
+        aside {
+          flex: 1;
+          box-sizing: border-box;
+          color: #262626;
+          box-flex: 0;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 18px;
+          padding-right: 32px;
+          text-align: right;
+          margin-top: 6px;
+          flex: 0 0 194px;
+          margin-bottom: 16px;
+        }
+
+        .bio-textarea {
+          flex: 1;
+          padding-right: 60px;
+          textarea {
+            height: 100px;
+            padding: 6px 10px;
+            resize: vertical;
+            background: 0 0;
+            border: 1px solid #efefef;
+            border-radius: 3px;
+            box-sizing: border-box;
+            color: #262626;
+            flex: 0 1 355px;
+            font-size: 16px;
+            height: 32px;
+            padding: 0 10px;
+          }
+        }
+      }
+    }
+  }
+
+
+}

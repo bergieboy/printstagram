@@ -67,7 +67,7 @@ body {
     display: flex;
     height: 38px;
     width: 180px;
-    margin-right: 10%;
+    margin-right: 15%;
     margin-top: 20px;
     background-image: url($sprite);
     background-size: cover;
@@ -89,11 +89,4 @@ body {
 
   }
 
-}
-
-.profile-pic {
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
-  border: 1px solid $box-border-gray;
 }
