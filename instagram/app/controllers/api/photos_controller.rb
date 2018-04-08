@@ -17,7 +17,7 @@ class Api::PhotosController < ApplicationController
     @photo = Photo.new(photo_params)
 
     if @photo.save
-      render :index
+      render :show
     else
       render json: ['Must attach image']
     end

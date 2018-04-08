@@ -1,0 +1,65 @@
+.upload-photo-container {
+  display: flex;
+  font-family: $default-font;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  margin: 60px auto 0;
+  max-width: 935px;
+  overflow: hidden;
+  width: 100%;
+
+  .add-photo-title {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    height: 100%;
+    line-height: 20px;
+    padding: 25px;
+    flex-basis: 236px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    text-align: center;
+  }
+
+  .upload-photo-form {
+    flex: 1 1 400px;
+    height: 100%;
+
+    form {
+      padding-bottom: 25px;
+      border-left: 1px solid #dbdbdb;
+    }
+
+    .photo-preview {
+      width: 600px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .photo-upload-button {
+      margin: 25px;
+      width: auto;
+      text-align: center;
+    }
+
+    .submit-button {
+      width: 80px;
+      display: block;
+      background: $link-blue;
+      color: $box-background-gray;
+      border-radius: 3px;
+      border: 1px solid $link-blue;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 26px;
+      outline: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
+}

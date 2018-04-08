@@ -1,12 +1,14 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import PhotoUpload from './photo_upload';
 import {
   createPhoto,
  } from '../../actions/photo_actions';
 
-const mapStatetoProps = ({ session }) => ({
-  currentUser: session.currentUser
-});
+const mapStatetoProps = ({ session }) => {
+  console.log(session.currentUser);
+  return {currentUser: session.currentUser};
+};
 
 const mapDispatchToProps = dispatch => ({
   createPhoto: (photo) => dispatch(createPhoto(photo))

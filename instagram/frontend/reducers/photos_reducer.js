@@ -4,7 +4,7 @@ import {
   RECEIVE_PHOTOS,
   RECEIVE_PHOTO,
   REMOVE_PHOTO
-} from '../actions/user_actions';
+} from '../actions/photo_actions';
 
 const photosReducer = (state = {}, action) => {
   Object.freeze(state);

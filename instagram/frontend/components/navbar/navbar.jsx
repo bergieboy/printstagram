@@ -25,7 +25,7 @@ class NavBar extends React.Component {
             </Link>
           </div>
           <div className="add-photo">
-            <button className='add-photo-button' >+ Add Photo</button>
+            <Link className='add-photo-button' to='/new'>+ Add Photo</Link>
           </div>
           <div className="nav-links">
             <Link to='/' className='discover-pg'></Link>

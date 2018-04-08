@@ -33,7 +33,7 @@ class EditProfileForm extends React.Component {
     fileReader.onloadend = () => {
       return this.setState({imgUrl: fileReader.result, imgFile: file});
     };
-    if(file) {
+    if (file) {
       fileReader.readAsDataURL(file);
     }
   }
@@ -72,7 +72,8 @@ class EditProfileForm extends React.Component {
               <div className='edit-form-user-info'>
                 <h1>{this.state.username}</h1>
                 <div className='edit-profile-pic-link'>
-                  <Link to='/'>Edit Profile Photo</Link>
+                  Edit Profile Photo
+                  <br></br>
                   <input type='file' onChange={this.updateFile}/>
                 </div>
               </div>

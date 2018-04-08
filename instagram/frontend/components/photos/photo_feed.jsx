@@ -2,24 +2,29 @@ import React from 'react';
 import PhotoFeedItem from './photo_feed_item';
 
 class PhotoFeed extends React.Component {
+  constructor(props){
+    super(props);
+    console.log(this.props.photos);
+  }
 
   componentDidMount(){
     this.props.fetchPhotos();
   }
 
   render () {
-    const photos = this.props.photos.map( (photo) => {
+    const photos = this.props.photos.map( photo => {
+      console.log(photo);
       return (
         <PhotoFeedItem
           key={photo.id}
-          post={photo}
-          deletePost={this.props.deletePhoto}
+          photo={photo}
+          deletePhoto={this.props.deletePhoto}
           />
       );
     });
     return (
-      <div>
-        <ul>
+      <div className='photo-feed-container'>
+        <ul className= 'photo-feed-ul'>
           {photos}
         </ul>
       </div>
@@ -27,4 +32,4 @@ class PhotoFeed extends React.Component {
   }
 }
 
-export default PostIndex;
+export default PhotoFeed;

@@ -14,7 +14,8 @@ import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import UserProfileContainer from './user_profile/user_profile_container';
 import EditProfileContainer from './user_profile/edit_profile_container';
-
+import PhotoUploadContainer from './photos/photo_upload_container';
+import PhotoFeedContainer from './photos/photo_feed_container';
 const App = () => (
 
   <div>
@@ -24,8 +25,10 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <Route exact path="/" component={PhotoFeedContainer} />
+      <Route exact path="/new" component={PhotoUploadContainer} />
       <Route exact path="/:username" component={UserProfileContainer} />
-      <Route path="/:username/edit" component={EditProfileContainer} />
+      <Route exact path="/:username/edit" component={EditProfileContainer} />
     </Switch>
   </div>
 );

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PhotoFeedItem = ({photo, deletePhoto}) => (
-  <div>
-    <img src={photo.img_url}/>
-    <button onClick={()=>deletePhoto(photo.id)}>Remove Photo</button>
-  </div>
-);
+const PhotoFeedItem = ({photo, deletePhoto}) => {
+  return (
+    <li className = 'photo-feed-li'>
+      <img src={photo.img_url}/>
+    </li>
+  );
+};
 
 export default PhotoFeedItem;

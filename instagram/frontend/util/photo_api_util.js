@@ -1,25 +1,27 @@
-const fetchPhotos = () => (
+export const fetchPhotos = () => (
   $.ajax({
     url: `api/photos`,
     method: 'GET'
   })
 );
-const fetchPhoto = (id) => (
+export const fetchPhoto = (id) => (
   $.ajax({
     url: `api/photos/${id}`,
     method: 'GET'
   })
 );
 
-const createPhoto = (photo) => (
-$.ajax({
-  url: `api/photos/${photo.id}`,
-  method: 'GET',
-  data: photo,
+export const createPhoto = (formData) => (
+  $.ajax({
+    url: `api/photos`,
+    method: 'POST',
+    processData: false,
+    contentType: false,
+    data: formData,
   })
 );
 
-const deletePhoto = (id) => (
+export const deletePhoto = (id) => (
   $.ajax({
     url: `api/photos/${id}`,
     method: 'DELETE'

@@ -48,17 +48,21 @@ body {
   .add-photo {
     min-width: 200px;
 
-    button {
-      font-size: 14px;
-      width: 215px;
+    .add-photo-button {
+      min-width: 200px;
+      margin: 25px;
+      padding: 5px;
+      line-height: 18px;
+      position: absolute;
+      text-align: center;
       color: $text-light-gray;
       background-color: $app-background-gray;
-      border: 1px solid $box-border-gray;
+      border: solid 1px #dbdbdb;
       border-radius: 3px;
-      height: 24px;
-      margin: 25px 25px 25px -20px;
-      text-align: center;
-      padding: 4px;
+      color: #262626;
+      font-size: 14px;
+      outline: 0;
+      z-index: 2;
     }
 
   }
