@@ -117,11 +117,12 @@
     }
 
     .user-bio {
-      display: flex;
+      display: block;
       h1 {
-        margin-right: 15px;
+        margin-right: 10px;
         color: #262626;
         font-weight: 600;
+        display: inline;
       }
 
     }

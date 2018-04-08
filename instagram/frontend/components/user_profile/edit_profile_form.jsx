@@ -6,6 +6,8 @@ class EditProfileForm extends React.Component {
     super(props);
     this.state = this.props.userFormInfo;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateFile = this.updateFile.bind(this);
+    this.filename = null;
   }
 
   componentDidMount(){
@@ -24,27 +26,26 @@ class EditProfileForm extends React.Component {
     };
   }
 
-  // updateFile(e){
-  //   const reader = new FileReader();
-  //   const file = e.currentTarget.files[0];
-  //
-  //   reader.onloadened = () =>
-  //     this.setState({ imgUrl: reader.result, imgFile: file}).bind(this);
-  //
-  //   if (file) {
-  //     reader.readAsDataURL(file);
-  //   }
-  // }
+  updateFile(e) {
+    const file = e.currentTarget.files[0];
+    this.filename = file.name;
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      return this.setState({imgUrl: fileReader.result, imgFile: file});
+    };
+    if(file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
 
   handleSubmit(e){
     e.preventDefault();
-    // const formData = new FormData();
-    // formData.append("user[img_url]", this.state.imgFile);
-    // formData.append("user[username]", this.state.username);
-    // formData.append("user[name]", this.state.name);
-    // formData.append("user[bio]", this.state.bio);
-    // console.log(formData.getAll());
-    this.props.updateUser(this.state)
+    const formData = new FormData();
+    formData.append("user[img_url]", this.state.imgFile);
+    formData.append("user[username]", this.state.username);
+    formData.append("user[name]", this.state.name);
+    formData.append("user[bio]", this.state.bio);
+    this.props.updateUser(formData)
       .then(() => this.props.history
       .push(`/${this.props.currentUser.username}`));
   }
@@ -72,6 +73,7 @@ class EditProfileForm extends React.Component {
                 <h1>{this.state.username}</h1>
                 <div className='edit-profile-pic-link'>
                   <Link to='/'>Edit Profile Photo</Link>
+                  <input type='file' onChange={this.updateFile}/>
                 </div>
               </div>
             </div>
