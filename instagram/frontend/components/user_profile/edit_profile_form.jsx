@@ -35,6 +35,11 @@ class EditProfileForm extends React.Component {
     };
     if (file) {
       fileReader.readAsDataURL(file);
+    } else {
+      this.setState({
+        imageUrl: this.props.currentUser.img_url,
+        imageFile: null
+      });
     }
   }
 
@@ -42,12 +47,13 @@ class EditProfileForm extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     formData.append("user[img_url]", this.state.imgFile);
+    formData.append("user[id]", this.props.currentUser.id);
     formData.append("user[username]", this.state.username);
     formData.append("user[name]", this.state.name);
     formData.append("user[bio]", this.state.bio);
     this.props.updateUser(formData)
       .then(() => this.props.history
-      .push(`/${this.props.currentUser.username}`));
+      .push(`/${this.props.currentUser.id}`));
   }
 
   render () {

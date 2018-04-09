@@ -35,7 +35,7 @@ class PhotoUpload extends React.Component {
     formData.append("photo[author_id]", this.state.authorId);
     this.props.createPhoto(formData)
       .then(() => this.props.history
-      .push(`/${this.props.currentUser.username}`));
+      .push(`/${this.props.currentUser.id}`));
   }
 
   render () {

@@ -4,16 +4,16 @@ export const fetchUsers = () => (
     method: 'GET'
   })
 );
-export const fetchUser = (username) => (
+export const fetchUser = (id) => (
   $.ajax({
-    url: `api/users/${username}`,
+    url: `api/users/${id}`,
     method: 'GET'
   })
 );
 
 export const updateUser = (formData) => (
   $.ajax({
-    url: `api/users/${formData.get('user[username]')}`,
+    url: `api/users/${formData.get('user[id]')}`,
     method: 'PATCH',
     processData: false,
     contentType: false,

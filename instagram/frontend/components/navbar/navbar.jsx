@@ -30,7 +30,7 @@ class NavBar extends React.Component {
           <div className="nav-links">
             <Link to='/' className='discover-pg'></Link>
             <Link to='/' className='notifications-pg'></Link>
-            <Link to={`/${currentUser.username}`} className='profile-pg'></Link>
+            <Link to={`/${currentUser.id}`} className='profile-pg'></Link>
           </div>
         </hgroup>
       </div>

@@ -1,15 +1,15 @@
 .main-content {
 
   box-sizing: content-box;
-  padding: 60px 20px 60px;
   width: calc(100% - 40px);
   margin: 0 auto 30px;
   max-width: 935px;
-  border-bottom: 1px solid #dbdbdb;
 }
 
-.header {
+.profile-header {
+  padding: 60px 20px 60px;
   margin: 0 auto;
+  border-bottom: 1px solid #dbdbdb;
 }
 
 .user-profile {
@@ -125,6 +125,36 @@
         display: inline;
       }
 
+    }
+  }
+
+}
+
+.profile-photo-index-container {
+  display: flex;
+  margin-top: 60px;
+
+  .profile-photo-index-ul {
+    width: 100%;
+    margin-bottom: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    li {
+      margin-bottom: 20px;
+      max-width: 293px;
+      max-height: 293px;
+      display: block;
+      overflow: hidden;
+      img {
+        min-height: 293px;
+      }
+      img.absolute {
+        left: 50%;
+        margin-left: -200px;
+        position: absolute;
+      }
     }
   }
 }

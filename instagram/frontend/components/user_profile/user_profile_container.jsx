@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
 import UserProfile from './user_profile';
 import { logout } from '../../actions/session_actions';
-import { fetchUsers } from '../../actions/user_actions';
+import { fetchUser } from '../../actions/user_actions';
 
-const mapStateToProps = (state, ownProps) => ({
-  userProf: state.entities.users[ownProps.match.params.username]
-});
+const mapStateToProps = (state, ownProps) => {
+  return ({userProf: state.entities.users[ownProps.match.params.userId]});
+};
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
-  fetchUsers: () => dispatch(fetchUsers()),
+  fetchUser: (id) => dispatch(fetchUser(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);

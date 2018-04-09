@@ -27,8 +27,8 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <Route exact path="/" component={PhotoFeedContainer} />
       <Route exact path="/new" component={PhotoUploadContainer} />
-      <Route exact path="/:username" component={UserProfileContainer} />
-      <Route exact path="/:username/edit" component={EditProfileContainer} />
+      <Route exact path="/:userId" component={UserProfileContainer} />
+      <Route exact path="/:userId/edit" component={EditProfileContainer} />
     </Switch>
   </div>
 );

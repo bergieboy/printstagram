@@ -5,7 +5,6 @@ import EditProfileForm from './edit_profile_form';
 import { fetchUser, updateUser } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state.session.currentUser);
   const currentUser = state.session.currentUser;
   const userFormInfo = {
     imgUrl: currentUser.img_url,

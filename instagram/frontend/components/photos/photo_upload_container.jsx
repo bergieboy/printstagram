@@ -6,7 +6,6 @@ import {
  } from '../../actions/photo_actions';
 
 const mapStatetoProps = ({ session }) => {
-  console.log(session.currentUser);
   return {currentUser: session.currentUser};
 };
 

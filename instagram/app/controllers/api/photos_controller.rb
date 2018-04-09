@@ -1,12 +1,13 @@
 class Api::PhotosController < ApplicationController
   def index
     @photos = (
-      if params[:user_id]
-        Photo.where(author_id: params[:user_id])
+      if params[:userId]
+        Photo.where(author_id: params[:userId])
       else
         Photo.all
       end
     )
+    render :index
   end
 
   def show

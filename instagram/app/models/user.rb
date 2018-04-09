@@ -13,8 +13,11 @@ class User < ApplicationRecord
     class_name: :Photo,
     foreign_key: :author_id
 
-
   attr_reader :password
+
+  def photo_count
+    self.photos.length
+  end
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

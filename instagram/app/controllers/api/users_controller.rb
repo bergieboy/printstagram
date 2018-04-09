@@ -17,11 +17,11 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_username(params[:id])
+    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find_by_username(params[:id])
+    @user = User.find(params[:id])
 
     if @user.update(
       params.require(:user).permit(:img_url, :username, :name, :bio)

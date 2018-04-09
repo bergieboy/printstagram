@@ -19,8 +19,8 @@ const removePhoto = (photoId) => ({
   photoId
 });
 
-export const fetchPhotos = () => dispatch => (
-  APIUtil.fetchPhotos().then( photos =>
+export const fetchPhotos = (userId) => dispatch => (
+  APIUtil.fetchPhotos(userId).then( photos =>
     dispatch(receivePhotos(photos)))
 );
 
