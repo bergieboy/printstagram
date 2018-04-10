@@ -13,6 +13,8 @@ class ProfilePhotoIndex extends React.Component {
         <ProfilePhotoIndexItem
           key={photo.id}
           photo={photo}
+          openModal={this.props.openModal}
+          closeModal={this.props.closeModal}
           />
       );
     });

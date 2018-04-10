@@ -16,9 +16,13 @@ import UserProfileContainer from './user_profile/user_profile_container';
 import EditProfileContainer from './user_profile/edit_profile_container';
 import PhotoUploadContainer from './photos/photo_upload_container';
 import PhotoFeedContainer from './photos/photo_feed_container';
+import PhotoShowContainer from './photos/photo_show_container';
+import Modal from './modal';
+
 const App = () => (
 
   <div>
+    <Modal />
     <header>
       <ProtectedRoute path="/" component={NavBarTempContainer} />
     </header>
@@ -28,6 +32,7 @@ const App = () => (
       <Route exact path="/" component={PhotoFeedContainer} />
       <Route exact path="/new" component={PhotoUploadContainer} />
       <Route exact path="/:userId" component={UserProfileContainer} />
+      <Route exact path="/photos/:photoId" component={PhotoShowContainer}/>
       <Route exact path="/:userId/edit" component={EditProfileContainer} />
     </Switch>
   </div>

@@ -1,19 +1,18 @@
 import { connect } from 'react-redux';
-import PhotoFeed from './photo_feed';
-import {photoSelector} from '../../selectors/photo_selector';
+import PhotoShow from './photo_show';
 import { fetchPhoto, deletePhoto } from '../../actions/photo_actions';
-import { fetchUsers } from '../../actions/user_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 
-const mapStatetoProps = (state) => ({
-  photos: photoSelector(state),
-  currentUser: state.session.currentUser,
-});
+const mapStatetoProps = (state, ownProps) => {
+  return {photo: state.entities.photos[ownProps.match.params.photoId]};
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchPhoto: (id) => dispatch(fetchPhoto(id)),
   deletePhoto: (id) => dispatch(deletePhoto(id)),
-  fetchUsers: () => dispatch(fetchUsers()),
+  openModal: () => dispatch(openModal()),
+  closeModal: () => dispatch(closeModal()),
 });
 
-export default connect(mapStatetoProps, mapDispatchToProps)(PhotoFeed);
+export default connect(mapStatetoProps, mapDispatchToProps)(PhotoShow);
