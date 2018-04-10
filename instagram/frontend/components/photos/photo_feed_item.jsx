@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import UserAvatar from '../user_profile/user_avatar';
+import { PhotoLikes } from '../likes/photo_likes';
 
 class PhotoFeedItem extends React.Component {
   constructor(props){
@@ -8,7 +9,6 @@ class PhotoFeedItem extends React.Component {
   }
 
 render() {
-
   return (
       <li className = 'photo-feed-li'>
         <UserAvatar
@@ -17,6 +17,10 @@ render() {
           username={this.props.photo.author_username}
           name={this.props.photo.author_name}/>
         <img src={this.props.photo.img_url}/>
+        <PhotoLikes
+          photo={this.props.photo}
+          likePhoto ={this.props.likePhoto}
+          unLikePhoto ={this.props.unLikePhoto}/>
       </li>
     );
   }

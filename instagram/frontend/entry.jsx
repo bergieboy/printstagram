@@ -4,7 +4,11 @@ import configureStore from './store/store';
 import Root from './components/root';
 import { login, logout, signup } from './util/session_api_util';
 import {fetchUsers} from './actions/user_actions';
-import {fetchPhotos} from './actions/photo_actions';
+import {
+  fetchPhotos,
+  likePhoto,
+  unLikePhoto,
+  } from './actions/photo_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -23,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.singup = signup;
   window.fetchUsers = fetchUsers;
   window.fetchPhotos = fetchPhotos;
+  window.likePhoto = likePhoto;
+  window.unLikePhoto = unLikePhoto;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 

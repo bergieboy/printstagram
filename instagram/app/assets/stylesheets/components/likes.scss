@@ -1,3 +1,32 @@
 // Place all the styles related to the Likes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+.photo-like-button {
+  margin-left: 8px;
+  padding: 8px;
+
+  .true {
+    button {
+      font-size: 24px;
+      color: red;
+    }
+  }
+
+  .false {
+    button {
+      font-size: 24px;
+      color: #262626cf;
+    }
+  }
+
+
+
+}

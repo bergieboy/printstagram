@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import UserAvatar from '../user_profile/user_avatar';
+import { PhotoLikes } from '../likes/photo_likes';
 
 class PhotoShow extends React.Component {
 
@@ -35,6 +36,10 @@ class PhotoShow extends React.Component {
               name={this.props.photo.author_name}/>
             <button onClick={()=>this.handleDeletePhoto(this.props.photo.id)}>Delete Photo</button>
           </div>
+          <PhotoLikes
+            photo={this.props.photo}
+            likePhoto ={this.props.likePhoto}
+            unLikePhoto ={this.props.unLikePhoto}/>
         </div>
 
       </div>

@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/photo_api_util';
+import * as APIUtil from '../util/photos_api_util';
 
 export const RECEIVE_PHOTOS = 'RECEIVE_PHOTOS';
 export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
@@ -37,4 +37,14 @@ export const createPhoto = photo => dispatch => (
 export const deletePhoto = photoId => dispatch => (
   APIUtil.deletePhoto(photoId).then( photo =>
     dispatch(removePhoto(photoId)))
+);
+
+export const likePhoto = id => dispatch => (
+  APIUtil.postLikeToPhoto(id)
+    .then(photo => dispatch(receivePhoto(photo)))
+);
+
+export const unLikePhoto = id => dispatch => (
+  APIUtil.deleteLikeFromPhoto(id)
+    .then(photo => dispatch(receivePhoto(photo)))
 );

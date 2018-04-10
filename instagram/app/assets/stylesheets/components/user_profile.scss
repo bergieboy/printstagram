@@ -4,12 +4,13 @@
   width: calc(100% - 40px);
   margin: 0 auto 30px;
   max-width: 935px;
+  padding: 60px 20px 60px;
 }
 
 .profile-header {
-  padding: 60px 20px 60px;
   margin: 0 auto;
   border-bottom: 1px solid #dbdbdb;
+  padding-bottom: 50px;
 }
 
 .user-profile {
@@ -49,7 +50,7 @@
     flex: 2;
     font-family: $default-font;
     color: #262626;
-    padding-left: 10px;
+    margin-left: -15px;
 
     .user-info-header {
       display: flex;

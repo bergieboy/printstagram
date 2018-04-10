@@ -10,8 +10,16 @@ class Photo < ApplicationRecord
 
   has_many :likes
 
+  has_many :likers,
+    through: :likes,
+    source: :user
+
+  def current_user_likes
+    currentUser === author
+  end
+
   def like_count
-    self.likes.count
+    self.likes.length
   end
 
 end

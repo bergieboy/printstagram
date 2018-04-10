@@ -11,18 +11,20 @@ class PhotoFeed extends React.Component {
     this.props.fetchPhotos();
   }
 
+
   render () {
-    console.log(this.props.users)
     const photos = this.props.photos.reverse().map( photo => {
       return (
         <PhotoFeedItem
           key={photo.id}
           photo={photo}
           deletePhoto={this.props.deletePhoto}
-          fetchUser={this.props.fetchUser}
+          likePhoto={this.props.likePhoto}
+          unLikePhoto={this.props.unLikePhoto}
           />
       );
     });
+
     return (
       <div className='photo-feed-container'>
         <div className='photo-container'>

@@ -35,7 +35,18 @@
         width: 100%;
         height: auto;
       }
+
+      .like-count {
+        font-family: $default-font;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        color: #262626;
+        padding-bottom: 8px;
+        margin-left: 16px;
+      }
     }
+
     .avatar {
       padding: 20px;
       margin: 0;
@@ -55,5 +66,15 @@
       }
     }
 
+  }
+}
+
+
+.user-avatar {
+  width: 300px;
+  height: 100vh;
+
+  .avatar {
+    border-bottom: 1px solid $box-border-gray;
   }
 }

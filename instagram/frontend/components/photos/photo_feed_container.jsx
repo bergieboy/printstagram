@@ -5,6 +5,8 @@ import {
   fetchPhotos,
   fetchPhoto,
   deletePhoto,
+  likePhoto,
+  unLikePhoto,
  } from '../../actions/photo_actions';
  import {fetchUsers} from '../../actions/user_actions';
 
@@ -19,6 +21,8 @@ const mapDispatchToProps = dispatch => ({
   fetchPhoto: (id) => dispatch(fetchPhoto(id)),
   deletePhoto: (id) => dispatch(deletePhoto(id)),
   fetchUsers: () => dispatch(fetchUsers()),
+  likePhoto: (id) => dispatch(likePhoto(id)),
+  unLikePhoto: (id) => dispatch(unLikePhoto(id)),
 });
 
 export default connect(mapStatetoProps, mapDispatchToProps)(PhotoFeed);
