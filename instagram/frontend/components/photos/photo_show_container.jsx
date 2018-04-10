@@ -5,7 +5,10 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 
 const mapStatetoProps = (state, ownProps) => {
-  return {photo: state.entities.photos[ownProps.match.params.photoId]};
+  return {
+    photo: state.entities.photos[ownProps.match.params.photoId],
+    currentUser: state.session.currentUser,
+  };
 };
 
 const mapDispatchToProps = dispatch => ({

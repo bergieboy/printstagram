@@ -13,6 +13,8 @@ class User < ApplicationRecord
     class_name: :Photo,
     foreign_key: :author_id
 
+  has_many :likes
+
   attr_reader :password
 
   def photo_count

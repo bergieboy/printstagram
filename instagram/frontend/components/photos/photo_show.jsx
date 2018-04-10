@@ -8,6 +8,10 @@ class PhotoShow extends React.Component {
     this.props.fetchPhoto(this.props.match.params.photoId);
   }
 
+  handleDeletePhoto(id){
+    this.props.deletePhoto(id).then(() => this.props.history.push(`/${this.props.currentUser.id}`));
+  }
+
   render () {
     const { photo } = this.props;
 
@@ -29,7 +33,7 @@ class PhotoShow extends React.Component {
               imgUrl={this.props.photo.author_img}
               username={this.props.photo.author_username}
               name={this.props.photo.author_name}/>
-            <button onClick={()=>this.props.deletePhoto()}>Delete Photo</button>
+            <button onClick={()=>this.handleDeletePhoto(this.props.photo.id)}>Delete Photo</button>
           </div>
         </div>
 
