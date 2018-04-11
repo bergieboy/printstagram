@@ -14,9 +14,9 @@ class Photo < ApplicationRecord
     through: :likes,
     source: :user
 
-  def current_user_likes
-    currentUser === author
-  end
+  has_many :comments,
+    class_name: :Comment,
+    foreign_key: :photo_id
 
   def like_count
     self.likes.length

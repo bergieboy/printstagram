@@ -1,8 +1,7 @@
-export const fetchPhotos = (userId) => (
+export const fetchPhotos = () => (
   $.ajax({
     url: `api/photos`,
-    method: 'GET',
-    data: { userId }
+    method: 'GET'
   })
 );
 export const fetchPhoto = (id) => (

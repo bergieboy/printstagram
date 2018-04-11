@@ -22,6 +22,13 @@ class PhotoShow extends React.Component {
       );
     }
 
+    let numLikes;
+    if (this.props.photo.like_count === 0) {
+      numLikes = "";
+    } else {
+      numLikes = this.props.photo.like_count;
+    }
+
     return (
       <div className='photo-show-container'>
         <div className='photo-show-image'>
@@ -39,7 +46,8 @@ class PhotoShow extends React.Component {
           <PhotoLikes
             photo={this.props.photo}
             likePhoto ={this.props.likePhoto}
-            unLikePhoto ={this.props.unLikePhoto}/>
+            unLikePhoto ={this.props.unLikePhoto}
+            numLikes={numLikes}/>
         </div>
 
       </div>

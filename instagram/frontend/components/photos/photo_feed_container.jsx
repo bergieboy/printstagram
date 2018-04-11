@@ -13,12 +13,13 @@ import {
 
 const mapStatetoProps = (state) => ({
   photos: photoSelector(state),
+  likes: state.entities.likes,
+  comments: state.entities.comments,
   currentUser: state.session.currentUser,
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchPhotos: () => dispatch(fetchPhotos()),
-  fetchPhoto: (id) => dispatch(fetchPhoto(id)),
   deletePhoto: (id) => dispatch(deletePhoto(id)),
   fetchUsers: () => dispatch(fetchUsers()),
   likePhoto: (id) => dispatch(likePhoto(id)),

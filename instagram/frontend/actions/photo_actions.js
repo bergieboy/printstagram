@@ -4,14 +4,14 @@ export const RECEIVE_PHOTOS = 'RECEIVE_PHOTOS';
 export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
 export const REMOVE_PHOTO = 'REMOVE_PHOTO';
 
-const receivePhotos = (photos) => ({
+const receivePhotos = (payload) => ({
   type: RECEIVE_PHOTOS,
-  photos
+  payload
 });
 
 const receivePhoto = (photo) => ({
   type: RECEIVE_PHOTO,
-  photo
+  photo,
 });
 
 const removePhoto = (photoId) => ({

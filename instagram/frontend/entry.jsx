@@ -9,6 +9,11 @@ import {
   likePhoto,
   unLikePhoto,
   } from './actions/photo_actions';
+import {
+  fetchComments,
+  createComment,
+  deleteComment,
+ } from './actions/comment_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -29,6 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchPhotos = fetchPhotos;
   window.likePhoto = likePhoto;
   window.unLikePhoto = unLikePhoto;
+  window.fetchComments = fetchComments;
+  window.createComment = createComment;
+  window.deleteComment = deleteComment;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 

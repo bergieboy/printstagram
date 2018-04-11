@@ -40,7 +40,9 @@ class UserProfile extends React.Component {
                 <div className='user-info-header'>
                   <h1>{userProf.username}</h1>
                   <Link className="edit-button" to={`/${userProf.id}/edit`}>Edit Profile</Link>
-                  <button className="logout-button" onClick={() => this.props.logout()}>Log Out</button>
+                  <button
+                    className="logout-button"
+                    onClick={() => this.props.logout().then(()=>this.props.history.push('/login'))}>Log Out</button>
                 </div>
                 <ul className='user-stats'>
                   <li><span>{userProf.photo_count}</span> photos</li>

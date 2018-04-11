@@ -9,6 +9,12 @@ class PhotoFeedItem extends React.Component {
   }
 
 render() {
+  let numLikes;
+  if (this.props.photo.like_count === 0) {
+    numLikes = "";
+  } else {
+    numLikes = this.props.photo.like_count;
+  }
   return (
       <li className = 'photo-feed-li'>
         <UserAvatar
@@ -20,7 +26,8 @@ render() {
         <PhotoLikes
           photo={this.props.photo}
           likePhoto ={this.props.likePhoto}
-          unLikePhoto ={this.props.unLikePhoto}/>
+          unLikePhoto ={this.props.unLikePhoto}
+          numLikes={numLikes}/>
       </li>
     );
   }

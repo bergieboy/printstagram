@@ -15,6 +15,8 @@ class User < ApplicationRecord
 
   has_many :likes
 
+  has_many :comments
+
   attr_reader :password
 
   def photo_count

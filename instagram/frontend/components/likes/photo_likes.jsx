@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const PhotoLikes = ({photo, unLikePhoto, likePhoto}) => {
+export const PhotoLikes = ({photo, unLikePhoto, likePhoto, numLikes}) => {
   let likeButton;
   let buttonDivClass;
   let buttonClass;
@@ -23,7 +23,7 @@ export const PhotoLikes = ({photo, unLikePhoto, likePhoto}) => {
             onClick={() => likeButton(photo.id)}/>
         </div>
       </div>
-      <h1 className='like-count'>{photo.like_count}</h1>
+      <h1 className='like-count'>{numLikes}</h1>
     </section>
   );
 };

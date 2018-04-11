@@ -1,11 +1,20 @@
 Rails.application.routes.draw do
 
+  get 'comments/index'
+
+  get 'comments/create'
+
+  get 'comments/destroy'
+
   namespace :api, defaults: { format: :json } do
     resources :users do
       resources :photos, only: [:index]
     end
     resource :session, only: %i[create destroy show]
-    resources :photos, only: %i[create destroy index show]
+    resources :photos, only: %i[create destroy index show] do
+      resources :comments, only: %i[index create]
+    end
+    resources :comments, only: [:destroy]
     resources :likes, only: [:create]
     delete '/likes', to: 'likes#destroy'
   end
