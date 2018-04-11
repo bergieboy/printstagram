@@ -36,8 +36,10 @@ class CommentIndex extends React.Component {
     .map( comment => {
       return(
         <li key={comment.id}>
-          <h1>{comment.user_username}</h1>
-          <p>{comment.body}</p>
+          <div className='comment-details'>
+            <h1>{comment.user_username}</h1>
+            <p>{comment.body}</p>
+          </div>
           <button onClick={()=> this.props.deleteComment(comment.id)}>x</button>
         </li>
       );
