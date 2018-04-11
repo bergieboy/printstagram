@@ -14,6 +14,7 @@ class PhotoFeed extends React.Component {
 
 
   render () {
+    console.log(this.props);
     const photos = this.props.photos
     .sort((a, b) => b.id - a.id)
     .map( photo => {
@@ -24,7 +25,7 @@ class PhotoFeed extends React.Component {
           deletePhoto={this.props.deletePhoto}
           likePhoto={this.props.likePhoto}
           unLikePhoto={this.props.unLikePhoto}
-          />
+          comments={this.props.comments}/>
       );
     });
 

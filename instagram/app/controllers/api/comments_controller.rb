@@ -1,6 +1,9 @@
 class Api::CommentsController < ApplicationController
+  before_action :require_logged_in
+
   def index
-    @comments = Photo.find(params[:photo_id]).comments
+    @photo = Photo.find(params[:photo_id])
+    @comments = @photo.comments
   end
 
   def create
@@ -9,7 +12,7 @@ class Api::CommentsController < ApplicationController
     @comment.photo_id = params[:photo_id]
 
     if @comment.save
-      render 'api/photos/show'
+      render :show
     else
       render json: @comment, status: 422
     end
@@ -18,7 +21,7 @@ class Api::CommentsController < ApplicationController
   def destroy
     comment = Comment.find(params[:id])
     comment.destroy
-    render 'api/photos/show'
+    render :show
   end
 
   private

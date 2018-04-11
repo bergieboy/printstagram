@@ -7,23 +7,29 @@ import {
   deletePhoto,
   likePhoto,
   unLikePhoto,
- } from '../../actions/photo_actions';
+  } from '../../actions/photo_actions';
+
+import {
+  createComment,
+  deleteComment,
+} from '../../actions/comment_actions';
+
  import {fetchUsers} from '../../actions/user_actions';
 
 
 const mapStatetoProps = (state) => ({
   photos: photoSelector(state),
-  likes: state.entities.likes,
-  comments: state.entities.comments,
+  comments: Object.values(state.entities.comments),
   currentUser: state.session.currentUser,
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchPhotos: () => dispatch(fetchPhotos()),
-  deletePhoto: (id) => dispatch(deletePhoto(id)),
-  fetchUsers: () => dispatch(fetchUsers()),
-  likePhoto: (id) => dispatch(likePhoto(id)),
-  unLikePhoto: (id) => dispatch(unLikePhoto(id)),
+  deletePhoto: id => dispatch(deletePhoto(id)),
+  likePhoto: id => dispatch(likePhoto(id)),
+  unLikePhoto: id => dispatch(unLikePhoto(id)),
+  createComment: comment => dispatch(createComment(comment)),
+  deleteComment: comment => dispatch(deleteComment(comment)),
 });
 
 export default connect(mapStatetoProps, mapDispatchToProps)(PhotoFeed);

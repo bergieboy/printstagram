@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import UserAvatar from '../user_profile/user_avatar';
 import { PhotoLikes } from '../likes/photo_likes';
+import CommentIndex from '../comments/comments_index';
 
 class PhotoFeedItem extends React.Component {
   constructor(props){
@@ -9,6 +10,7 @@ class PhotoFeedItem extends React.Component {
   }
 
 render() {
+  console.log(this.props);
   let numLikes;
   if (this.props.photo.like_count === 0) {
     numLikes = "";
@@ -28,6 +30,9 @@ render() {
           likePhoto ={this.props.likePhoto}
           unLikePhoto ={this.props.unLikePhoto}
           numLikes={numLikes}/>
+        <CommentIndex
+          photo={this.props.photo}
+          comments={this.props.comments}/>
       </li>
     );
   }
