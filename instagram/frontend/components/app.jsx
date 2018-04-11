@@ -29,11 +29,11 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <Route exact path="/" component={PhotoFeedContainer} />
-      <Route exact path="/new" component={PhotoUploadContainer} />
-      <Route exact path="/:userId" component={UserProfileContainer} />
-      <Route exact path="/photos/:photoId" component={PhotoShowContainer}/>
-      <Route exact path="/:userId/edit" component={EditProfileContainer} />
+      <ProtectedRoute exact path="/" component={PhotoFeedContainer} />
+      <ProtectedRoute exact path="/new" component={PhotoUploadContainer} />
+      <ProtectedRoute exact path="/:userId" component={UserProfileContainer} />
+      <ProtectedRoute exact path="/photos/:photoId" component={PhotoShowContainer}/>
+      <ProtectedRoute exact path="/:userId/edit" component={EditProfileContainer} />
     </Switch>
   </div>
 );
