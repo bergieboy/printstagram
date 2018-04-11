@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import UserAvatar from '../user_profile/user_avatar';
 import { PhotoLikes } from '../likes/photo_likes';
+import CommentIndex from '../comments/comments_index';
 
 class PhotoShow extends React.Component {
 
@@ -48,6 +49,12 @@ class PhotoShow extends React.Component {
             likePhoto ={this.props.likePhoto}
             unLikePhoto ={this.props.unLikePhoto}
             numLikes={numLikes}/>
+          <CommentIndex
+            photo={this.props.photo}
+            comments={this.props.comments}
+            createComment={this.props.createComment}
+            deleteComment={this.props.deleteComment}
+            currentUser={this.props.currentUser}/>
         </div>
 
       </div>

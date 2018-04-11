@@ -8,7 +8,7 @@ class CommentIndex extends React.Component {
     this.state = {
         photoId: this.props.photo.id,
         userId: this.props.currentUser.id,
-        body: ""
+        body: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
 
@@ -21,7 +21,6 @@ class CommentIndex extends React.Component {
   }
 
   handleSubmit(e){
-    console.log(this.props);
     e.preventDefault();
     this.props.createComment(this.state)
     .then(() => this.setState({body: ""}));
@@ -39,7 +38,7 @@ class CommentIndex extends React.Component {
         <li key={comment.id}>
           <h1>{comment.user_username}</h1>
           <p>{comment.body}</p>
-          <button onClick={()=> this.deleteComment(comment.id)}>x</button>
+          <button onClick={()=> this.props.deleteComment(comment.id)}>x</button>
         </li>
       );
     });
@@ -52,7 +51,7 @@ class CommentIndex extends React.Component {
     const comments = this.commentRender();
 
     return(
-      <div>
+      <div className='comments'>
         <ul className='comments-ul'>
           {comments}
         </ul>
@@ -62,11 +61,12 @@ class CommentIndex extends React.Component {
               id="comment-input"
               type='text'
               placeholder='Add a comment...'
+              value={this.state.body}
               onChange={this.update('body')}/>
           </label>
-          <input
-            id='comment-submit-btn'
-            type='submit'/>
+          <div className='comment-submit-btn'>
+            <input type='submit'/>
+          </div>
         </form>
       </div>
     );

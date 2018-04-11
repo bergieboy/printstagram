@@ -1,0 +1,54 @@
+.comments {
+  font-family: $default-font;
+  color: #262626;
+  padding: 0 16px;
+  font-size: 14px;
+  position: relative;
+
+  .comments-ul {
+
+    li {
+      display: flex;
+      overflow: hidden;
+      padding-bottom: 6px;
+      position: relative;
+      word-wrap: break-word;
+      margin-top: -5px;
+      padding-top: 5px;
+      line-height: 18px;
+
+      h1 {
+        margin-right: .3em;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding-left: 5px;
+        margin-left: -5px;
+      }
+    }
+  }
+  form {
+    margin-top: 30px;
+  }
+  .comment-body-input {
+
+    padding: 16px 0px 16px;
+    margin-top: 4px;
+    border-top: 1px solid #efefef;
+    color: #999;
+    flex-shrink: 0;
+    font-size: 14px;
+    line-height: 18px;
+    min-height: 56px;
+    width: 100%;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .comment-submit-btn input {
+    visibility: hidden;
+  }
+}

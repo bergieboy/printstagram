@@ -15,10 +15,9 @@ const receiveComment = ({comment, photo}) => ({
   photo
 });
 
-const removeComment = ({photo, commentId}) => ({
+const removeComment = (commentId) => ({
   type: REMOVE_COMMENT,
-  photo,
-  commentId
+  commentId,
 });
 
 

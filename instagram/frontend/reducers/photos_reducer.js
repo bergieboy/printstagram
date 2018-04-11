@@ -16,6 +16,7 @@ import {RECEIVE_USER} from '../actions/user_actions';
 const photosReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
+
   switch (action.type) {
     case RECEIVE_PHOTOS:
       return merge({}, action.payload.photos);
@@ -30,9 +31,6 @@ const photosReducer = (state = {}, action) => {
 
     case RECEIVE_COMMENT:
       return merge({}, state, {[action.photo.id]: action.photo});
-    case REMOVE_COMMENT:
-      newState[action.photo.id] = action.photo;
-      return newState;
 
     default:
       return state;
