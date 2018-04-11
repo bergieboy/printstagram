@@ -25,7 +25,10 @@ class PhotoFeed extends React.Component {
           deletePhoto={this.props.deletePhoto}
           likePhoto={this.props.likePhoto}
           unLikePhoto={this.props.unLikePhoto}
-          comments={this.props.comments}/>
+          comments={this.props.comments}
+          createComment={this.props.createComment}
+          deleteComment={this.props.deleteComment}
+          currentUser={this.props.currentUser}/>
       );
     });
 

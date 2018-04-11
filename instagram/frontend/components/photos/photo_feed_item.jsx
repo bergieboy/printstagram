@@ -10,7 +10,6 @@ class PhotoFeedItem extends React.Component {
   }
 
 render() {
-  console.log(this.props);
   let numLikes;
   if (this.props.photo.like_count === 0) {
     numLikes = "";
@@ -32,7 +31,10 @@ render() {
           numLikes={numLikes}/>
         <CommentIndex
           photo={this.props.photo}
-          comments={this.props.comments}/>
+          comments={this.props.comments}
+          createComment={this.props.createComment}
+          deleteComment={this.props.deleteComment}
+          currentUser={this.props.currentUser}/>
       </li>
     );
   }

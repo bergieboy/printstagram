@@ -25,9 +25,9 @@ class Api::PhotosController < ApplicationController
   end
 
   def destroy
-    photo = current_user.photos.find(params[:id])
-    photo.destroy
-    render :index
+    @photo = current_user.photos.find(params[:id])
+    @photo.destroy
+    render :destroy
   end
 
   private

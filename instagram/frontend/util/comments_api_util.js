@@ -8,7 +8,7 @@ export const fetchComments = (photoId) => (
 
 export const createComment = (comment) => (
   $.ajax({
-    url: `api/photos/${comment.photo_id}/comments`,
+    url: `api/photos/${comment.photoId}/comments`,
     method: 'POST',
     data: { comment },
   })
