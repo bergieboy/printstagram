@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 import PhotoShow from './photo_show';
+import {selectCommentsForPhoto} from '../../selectors/photo_selector';
+
 import {
   fetchPhoto,
   deletePhoto,
   likePhoto,
   unLikePhoto,
 } from '../../actions/photo_actions';
-import { openModal, closeModal } from '../../actions/modal_actions';
 
 import {
   createComment,
@@ -14,9 +15,10 @@ import {
 } from '../../actions/comment_actions';
 
 const mapStatetoProps = (state, ownProps) => {
+  console.log(Object.values(selectCommentsForPhoto(state, ownProps.match.params.photoId)));
   return {
     photo: state.entities.photos[ownProps.match.params.photoId],
-    comments: Object.values(state.entities.comments),
+    comments: selectCommentsForPhoto(state, ownProps.match.params.photoId),
     currentUser: state.session.currentUser,
   };
 };
@@ -24,8 +26,6 @@ const mapStatetoProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
   fetchPhoto: (id) => dispatch(fetchPhoto(id)),
   deletePhoto: (id) => dispatch(deletePhoto(id)),
-  openModal: () => dispatch(openModal()),
-  closeModal: () => dispatch(closeModal()),
   likePhoto: (id) => dispatch(likePhoto(id)),
   unLikePhoto: (id) => dispatch(unLikePhoto(id)),
   createComment: comment => dispatch(createComment(comment)),

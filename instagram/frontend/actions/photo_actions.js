@@ -9,9 +9,10 @@ const receivePhotos = (payload) => ({
   payload
 });
 
-const receivePhoto = (photo) => ({
+const receivePhoto = ({photo, comments}) => ({
   type: RECEIVE_PHOTO,
   photo,
+  comments
 });
 
 const removePhoto = (photoId) => ({

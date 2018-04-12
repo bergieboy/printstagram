@@ -6,7 +6,10 @@ import {
   REMOVE_COMMENT,
 } from '../actions/comment_actions';
 
-import { RECEIVE_PHOTOS } from '../actions/photo_actions';
+import {
+  RECEIVE_PHOTOS,
+  RECEIVE_PHOTO
+} from '../actions/photo_actions';
 
 import {RECEIVE_USER} from '../actions/user_actions';
 
@@ -24,6 +27,8 @@ const commentsReducer = (state = {}, action) => {
 
     case RECEIVE_PHOTOS:
       return merge({}, state, action.payload.comments);
+    case RECEIVE_PHOTO:
+      return merge({}, state, action.comments)
 
     case RECEIVE_USER:
       return merge({}, action.payload.comments);

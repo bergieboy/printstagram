@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 class CommentIndex extends React.Component {
   constructor(props){
     super(props);
-    console.log(this.props.photo.id);
     this.state = {
         photoId: this.props.photo.id,
         userId: this.props.currentUser.id,

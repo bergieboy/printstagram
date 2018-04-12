@@ -15,6 +15,7 @@ class PhotoShow extends React.Component {
   }
 
   render () {
+    console.log(this.props.comments);
     const { photo } = this.props;
 
     if (!photo) {
@@ -29,7 +30,7 @@ class PhotoShow extends React.Component {
     } else {
       numLikes = this.props.photo.like_count;
     }
-
+    
     return (
       <div>
         <section className='photo-show-container'>

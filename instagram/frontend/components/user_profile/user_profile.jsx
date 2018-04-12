@@ -17,6 +17,17 @@ class UserProfile extends React.Component {
     }
   }
 
+  editProfileButton(){
+    let editButton;
+    if (this.props.match.params.userId == this.props.currentUser.id) {
+      editButton = 'edit-button';
+    } else {
+      editButton = 'edit-button-hide';
+    }
+    console.log(editButton);
+    return editButton;
+  }
+
 
   render() {
     const { userProf } = this.props;
@@ -39,7 +50,7 @@ class UserProfile extends React.Component {
               <section className='user-info'>
                 <div className='user-info-header'>
                   <h1>{userProf.username}</h1>
-                  <Link className="edit-button" to={`/${userProf.id}/edit`}>Edit Profile</Link>
+                  <Link className={this.editProfileButton()} to={`/${userProf.id}/edit`}>Edit Profile</Link>
                   <button
                     className="logout-button"
                     onClick={() => this.props.logout().then(()=>this.props.history.push('/login'))}>Log Out</button>

@@ -82,6 +82,10 @@
          text-overflow: ellipsis;
        }
 
+       .edit-button-hide {
+         visibility: hidden;
+       }
+
        .logout-button {
          display: block;
          position: relative;
