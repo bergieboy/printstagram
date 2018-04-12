@@ -11,7 +11,7 @@ demo_user = User.create!(
   password: "PASSWORD",
   name: "Demo User",
   img_url: "https://s3-us-west-1.amazonaws.com/printstagram-pro/seed_data/demo/demoprof.png",
-  bio: "Welcome to Printstagram. This platform was created so that you could share your experiences with the world! Try adding a photo and interacting with your friends by liking and commenting on their photos!")
+  bio: "Welcome to Printstagram! This platform was created so that you could share your experiences with the world! Try adding a photo and interacting with your friends by liking and commenting on their photos!")
 todd = User.create!(
   username: "bergieboy",
   password: "password",
