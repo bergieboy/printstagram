@@ -112,7 +112,7 @@ p12 = Photo.create!(
 )
 p13 = Photo.create!(
   author_id: 1,
-  img_url: "https://s3-us-west-1.amazonaws.com/printstagram-pro/seed_data/demo/IMG_0535.JPG"
+  img_url: "https://s3-us-west-1.amazonaws.com/printstagram-pro/seed_data/demo/IMG_0269.JPG"
 )
 p14 = Photo.create!(
   author_id: 1,

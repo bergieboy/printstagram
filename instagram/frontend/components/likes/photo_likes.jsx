@@ -7,11 +7,11 @@ export const PhotoLikes = ({photo, unLikePhoto, likePhoto, numLikes}) => {
   if (photo.currentUserLikes) {
     likeButton = unLikePhoto;
     buttonDivClass = 'true';
-    buttonClass = "fontawesome-heart";
+    buttonClass = "fas fa-heart";
   } else {
     likeButton = likePhoto;
     buttonDivClass = 'false';
-    buttonClass = "fontawesome-heart-empty";
+    buttonClass = "far fa-heart";
   }
 
   return (
