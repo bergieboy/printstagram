@@ -149,11 +149,12 @@
       max-height: 293px;
       overflow: hidden;
       img {
-        max-height: 350px;
-        min-width: 293px;
+        max-height: 375px;
         width: auto;
-        display: block;
-        margin: auto;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -10%);
       }
 
     }
