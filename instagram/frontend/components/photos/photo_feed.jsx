@@ -39,12 +39,14 @@ class PhotoFeed extends React.Component {
             {photos}
           </ul>
         </div>
-        <div className='user-avatar'>
-          <UserAvatar
-            userId={this.props.currentUser.id}
-            imgUrl={this.props.currentUser.img_url}
-            username={this.props.currentUser.username}
-            name={this.props.currentUser.name}/>
+        <div className='photo-feed-sidebar'>
+          <div className='user-avatar'>
+            <UserAvatar
+              userId={this.props.currentUser.id}
+              imgUrl={this.props.currentUser.img_url}
+              username={this.props.currentUser.username}
+              name={this.props.currentUser.name}/>
+          </div>
         </div>
       </div>
     );

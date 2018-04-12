@@ -16,19 +16,24 @@
       margin-top: -5px;
       padding-top: 5px;
       line-height: 18px;
+      justify-content: space-between;
 
-      h1 {
-        margin-right: .3em;
-        font-weight: 600;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        padding-left: 5px;
-        margin-left: -5px;
+      .comment-details {
+        display: flex;
+        h1 {
+          margin-right: .3em;
+          font-weight: 600;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          padding-left: 5px;
+          margin-left: -5px;
+        }
       }
 
-      button {
 
+      button {
+        color: #999;
       }
     }
   }

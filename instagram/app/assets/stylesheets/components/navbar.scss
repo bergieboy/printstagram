@@ -4,6 +4,11 @@ $sprite: image_path("sprite.png");
 body {
   background: $app-background-gray;
 }
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
 
 .header-group {
   display: flex;

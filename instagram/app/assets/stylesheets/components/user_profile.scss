@@ -4,7 +4,7 @@
   width: calc(100% - 40px);
   margin: 0 auto 30px;
   max-width: 935px;
-  padding: 60px 20px 60px;
+  padding: 135px 20px 60px;
 }
 
 .profile-header {
@@ -147,16 +147,15 @@
       margin-bottom: 20px;
       max-width: 293px;
       max-height: 293px;
-      display: block;
       overflow: hidden;
       img {
-        min-height: 293px;
+        max-height: 350px;
+        min-width: 293px;
+        width: auto;
+        display: block;
+        margin: auto;
       }
-      img.absolute {
-        left: 50%;
-        margin-left: -200px;
-        position: absolute;
-      }
+
     }
   }
 }

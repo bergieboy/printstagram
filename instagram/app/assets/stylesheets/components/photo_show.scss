@@ -1,14 +1,19 @@
+.photo-show {
+  padding: 135px;
+}
+
 .photo-show-container {
+    transform: translateY(135px);
     box-sizing: content-box;
     width: calc(100% - 40px);
-    margin: 0 auto 30px;
+    margin: 60px auto 30px;
     max-width: 935px;
     display: flex;
     font-family: $default-font;
     background-color: #fff;
     border: 1px solid #dbdbdb;
     border-radius: 3px;
-    margin: 60px auto 0;
+    margin: 0 auto;
     max-width: 935px;
     overflow: hidden;
     width: 100%;
@@ -27,7 +32,7 @@
     right: 0;
     top: 30px;
     width: 335px;
-    
+
     .like-count {
       font-family: $default-font;
       font-weight: bold;

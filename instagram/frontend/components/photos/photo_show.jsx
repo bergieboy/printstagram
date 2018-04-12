@@ -31,32 +31,33 @@ class PhotoShow extends React.Component {
     }
 
     return (
-      <div className='photo-show-container'>
-        <div className='photo-show-image'>
-          <img src={this.props.photo.img_url}/>
-        </div>
-        <div className='photo-show-sidebar'>
-          <div className='photo-show-avatar'>
-            <UserAvatar
-              userId={this.props.photo.author_id}
-              imgUrl={this.props.photo.author_img}
-              username={this.props.photo.author_username}
-              name={this.props.photo.author_name}/>
-            <button onClick={()=>this.handleDeletePhoto(this.props.photo.id)}>Delete Photo</button>
+      <div>
+        <section className='photo-show-container'>
+          <div className='photo-show-image'>
+            <img src={this.props.photo.img_url}/>
           </div>
-          <PhotoLikes
-            photo={this.props.photo}
-            likePhoto ={this.props.likePhoto}
-            unLikePhoto ={this.props.unLikePhoto}
-            numLikes={numLikes}/>
-          <CommentIndex
-            photo={this.props.photo}
-            comments={this.props.comments}
-            createComment={this.props.createComment}
-            deleteComment={this.props.deleteComment}
-            currentUser={this.props.currentUser}/>
-        </div>
-
+          <div className='photo-show-sidebar'>
+            <div className='photo-show-avatar'>
+              <UserAvatar
+                userId={this.props.photo.author_id}
+                imgUrl={this.props.photo.author_img}
+                username={this.props.photo.author_username}
+                name={this.props.photo.author_name}/>
+              <button onClick={()=>this.handleDeletePhoto(this.props.photo.id)}>Delete Photo</button>
+            </div>
+            <PhotoLikes
+              photo={this.props.photo}
+              likePhoto ={this.props.likePhoto}
+              unLikePhoto ={this.props.unLikePhoto}
+              numLikes={numLikes}/>
+            <CommentIndex
+              photo={this.props.photo}
+              comments={this.props.comments}
+              createComment={this.props.createComment}
+              deleteComment={this.props.deleteComment}
+              currentUser={this.props.currentUser}/>
+          </div>
+        </section>
       </div>
     );
   }

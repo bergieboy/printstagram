@@ -1,5 +1,5 @@
 .photo-feed-container {
-  padding-top: 60px;
+  padding-top: 135px;
   display: flex;
   flex-flow: row nowrap;
   max-width: 935px;
@@ -45,8 +45,8 @@
         padding-bottom: 8px;
         margin-left: 16px;
       }
-    }
 
+    }
     .avatar {
       padding: 20px;
       margin: 0;
@@ -75,6 +75,7 @@
   height: 100vh;
 
   .avatar {
+    position: fixed;
     border-bottom: 1px solid $box-border-gray;
   }
 }
