@@ -57,8 +57,8 @@ class UserProfile extends React.Component {
                 </div>
                 <ul className='user-stats'>
                   <li><span>{userProf.photo_count}</span> photos</li>
-                  <li><span>XX</span> followers</li>
-                  <li><span>XX</span> following</li>
+                  <li><span>8</span> followers</li>
+                  <li><span>8</span> following</li>
                 </ul>
                 <div className='user-bio'>
                   <h1>{userProf.name}</h1>

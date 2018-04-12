@@ -11,13 +11,8 @@ class EditProfileForm extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchUser(this.props.match.params.username);
-  }
-
-  componentWillReceiveProps(newProps){
-    if (newProps.match.params.username !== this.props.currentUser.username) {
-      this.props.fetchUser(newProps.match.params.username);
-    }
+    console.log(this.props.match.params.userId);
+    this.props.fetchUser(parseInt(this.props.match.params.userId));
   }
 
   update(field){
@@ -33,6 +28,7 @@ class EditProfileForm extends React.Component {
     fileReader.onloadend = () => {
       return this.setState({imgUrl: fileReader.result, imgFile: file});
     };
+    console.log(file);
     if (file) {
       fileReader.readAsDataURL(file);
     } else {
