@@ -1,6 +1,12 @@
 # Welcome to Printstagram!
 
-Prinstagram is a photo sharing social platform inspired by instagram.
+Prinstagram is a photo sharing social platform inspired by instagram. Share you experiences through photography and connect with friends to follow their journeys. I encourage you to to share your creativity to inspire and connect with others in the Prinstagram community.
+
+### Core Values
+
+ 1. Community
+ 2. Simplicity
+ 3. Creativity
 
 [Printstagram Design Documents](https://github.com/bergieboy/printstagram/wiki)
 
@@ -61,4 +67,8 @@ Printstagram is a single-page with one backend route that renders HTML. As users
 - React utilizes unidirectional data flow, which means that the UI interface is only affected by changes in the database.
 
 ### Redux
-Redux was used to manage the front-end state or 'View Layer" of Printstagram. Redux is a JavaScript framework that allows for the state of your app to be stored in one single location, typically referred to as the 'store'. Redux is particularly useful when multiple components require the same data, but aren't necessarily related.  Access to the store can be limited to only the required data for a specific component. 
+Redux was used to manage the front-end state or the 'View Layer" of Printstagram. Redux is a JavaScript framework that allows for the state of your app to be stored in one single location, typically referred to as the 'store'. Redux is particularly useful when multiple components require the same data, but aren't necessarily related.  Access to the store can be limited to only the required data for a specific component.
+
+## Future Directives
+
+Jumping forward into Printstagram's future, I plan to continue to add the core features which have come to define instagram. Notifications, hashtags, search, and messaging are all functionalities that are intended to be implemented into the web service in the near future. 
