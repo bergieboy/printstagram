@@ -49,7 +49,10 @@ class CommentIndex extends React.Component {
       return(
         <li key={comment.id}>
           <div className='comment-details'>
-            <h1>{comment.user_username}</h1>
+            <Link
+              to={`/${comment.user_id}`}>
+              <h1>{comment.user_username}</h1>
+            </Link>
             <p>{comment.body}</p>
           </div>
           <div className={this.toggleDelete(comment.user_id)}>

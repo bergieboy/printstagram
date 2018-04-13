@@ -1,6 +1,6 @@
 import React from 'react';
 import PhotoFeedItem from './photo_feed_item';
-import UserAvatar from '../user_profile/user_avatar';
+import UserAvatar from '../users/user_avatar';
 
 class PhotoFeed extends React.Component {
   constructor(props){
