@@ -10,6 +10,8 @@ Prinstagram is a photo sharing social platform inspired by instagram. Share you 
 
 [Printstagram Design Documents](https://github.com/bergieboy/printstagram/wiki)
 
+[Link to Printstagram](https://printstagramz.herokuapp.com/#/)
+
 
 ## Key Features
 
