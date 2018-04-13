@@ -34,6 +34,15 @@ Instagram allows you to share your experiences through photos.
 - Users can only remove comments that they created.
 - Comments are displayed below each photo on the feed and the photo show page.
 - Body of comments are displayed adjacent to the author's username.
+- Comment button redirects to comment input. see the following code:
+
+	    getFocus() {
+	        document.getElementById("comment-input").focus();
+	    }
+      <button
+        ref={(input)=> {commentInput = input;}}
+        className="far fa-comment"
+        onClick={()=>this.getFocus()}/>  
 
 ### User Profile
 - A users profile displays all of their photos.
@@ -71,4 +80,4 @@ Redux was used to manage the front-end state or the 'View Layer" of Printstagram
 
 ## Future Directives
 
-Jumping forward into Printstagram's future, I plan to continue to add the core features which have come to define instagram. Notifications, hashtags, search, and messaging are all functionalities that are intended to be implemented into the web service in the near future. 
+Jumping forward into Printstagram's future, I plan to continue to add the core features which have come to define instagram. Notifications, hashtags, search, and messaging are all functionalities that are intended to be implemented into the web service in the near future.
