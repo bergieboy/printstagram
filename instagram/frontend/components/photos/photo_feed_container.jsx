@@ -1,6 +1,10 @@
 import { connect } from 'react-redux';
 import PhotoFeed from './photo_feed';
-import {photoSelector} from '../../selectors/photo_selector';
+import {
+  photoSelector,
+  userSelector,
+  } from '../../selectors/photo_selector';
+
 import {
   fetchPhotos,
   fetchPhoto,
@@ -19,6 +23,7 @@ import {
 
 const mapStatetoProps = (state) => ({
   photos: photoSelector(state),
+  users: userSelector(state),
   comments: Object.values(state.entities.comments),
   currentUser: state.session.currentUser,
 });
@@ -26,6 +31,7 @@ const mapStatetoProps = (state) => ({
 const mapDispatchToProps = dispatch => ({
   fetchPhotos: () => dispatch(fetchPhotos()),
   deletePhoto: id => dispatch(deletePhoto(id)),
+  fetchUsers: () => dispatch(fetchUsers()),
   likePhoto: id => dispatch(likePhoto(id)),
   unLikePhoto: id => dispatch(unLikePhoto(id)),
   createComment: comment => dispatch(createComment(comment)),
