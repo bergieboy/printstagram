@@ -98,3 +98,25 @@
     overflow-x: hidden;
   }
 }
+
+.footer ul {
+  margin-top: 15px;
+  display: flex;
+  color: #c7c7c7;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13px;
+  text-transform: capitalize;
+
+li {
+	display:inline-block;
+}
+li:before {
+	content: '\00a0\2022\00a0\00a0';
+	font-size:11px;
+}
+li:first-child:before {
+	content: '';
+}
+
+}

@@ -67,6 +67,13 @@ class PhotoFeed extends React.Component {
                 {users}
               </ul>
             </div>
+            <footer className='footer'>
+              <ul>
+                <li><a href='https://github.com/bergieboy'>GitHub</a></li>
+                <li><a href='https://www.linkedin.com/in/todd-bergman/'>LinkedIn</a></li>
+                <li><a href='https://angel.co/todd-bergman-1'>AngelList</a></li>
+              </ul>
+            </footer>
           </div>
         </div>
       </div>

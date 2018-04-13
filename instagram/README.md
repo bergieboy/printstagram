@@ -1,24 +1,64 @@
-# README
+# Welcome to Printstagram!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Prinstagram is a photo sharing social platform inspired by instagram.
 
-Things you may want to cover:
+[Printstagram Design Documents](https://github.com/bergieboy/printstagram/wiki)
 
-* Ruby version
 
-* System dependencies
+## Key Features
 
-* Configuration
+Instagram allows you to share your experiences through photos.
 
-* Database creation
+### User Authentication
+ - Users can create accounts and log into their existing accounts.
+ - A user can use a demo login option if they would experience the application prior to signing up.
 
-* Database initialization
+### Add Photos
+- Users can add and remove photos from their profile.
+- Photos that users upload will be displayed on their personal profile page and the public feed.
+- While on a users profile, you can click on one of their photos to display a higher resolution version on it's show page.
+-
+### Like Photos
+- Users can like and unlike any photo on the site.
+- The heart icon turns from hollow with a grey border to solid red when the current user likes a photo.
+- The like count is displayed below each photo.
 
-* How to run the test suite
+### Comment on Photos
+- Users can add and remove comments to any photo on the site.
+- Users can only remove comments that they created.
+- Comments are displayed below each photo on the feed and the photo show page.
+- Body of comments are displayed adjacent to the author's username.
 
-* Services (job queues, cache servers, search engines, etc.)
+### User Profile
+- A users profile displays all of their photos.
+- Users can edit their profile information from their page:
+	- Profile Photo
+	- Username
+	- Name
+	- Bio
+- Users stats are displayed on their profile page:
+	- Photo Count
+	- Followers
+	- Following
 
-* Deployment instructions
+### Feed
+- Feed displays all users photos.
+- Users can like and comment on other users photos
+- Users can navigate to other users profiles by clicking that users avatar above their photo.
+- The current user's and 'Featured' user's avatars are displayed as stationary links, adjacent to the photo feed.
 
-* ...
+
+## Technologies
+
+### Ruby on Rails
+Ruby on Rails was chosen as the back-end framework due to it's out-of-the box tools and support with database communication, schema migrations, caching, API mode, security defaults, and RESTful architecture. In addition to these, a very large collection of third party components (gems) are publicly available to engineers and can be used to aid in development of web applications. Rails also supports frontend tools, such as Webpack and SCSS, which can be used to process javascript and css.
+
+### React
+Printstagram is a single-page with one backend route that renders HTML. As users interact with the site, database requests send and receive information. React is able to take this information and update only the affected portions of the page. This allows for specific pieces of information to change be updated without having to update every piece of information on the page. Advantages of using React include:
+
+- Support of JSX syntax, making code more readable.
+- Components are the basis of React. Each component manages it's own logic and rendering. These components can be reused in other components, which creates a easily maintainable and scalable developing environment.
+- React utilizes unidirectional data flow, which means that the UI interface is only affected by changes in the database.
+
+### Redux
+Redux was used to manage the front-end state or 'View Layer" of Printstagram. Redux is a JavaScript framework that allows for the state of your app to be stored in one single location, typically referred to as the 'store'. Redux is particularly useful when multiple components require the same data, but aren't necessarily related.  Access to the store can be limited to only the required data for a specific component. 
