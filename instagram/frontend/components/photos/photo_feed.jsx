@@ -61,7 +61,7 @@ class PhotoFeed extends React.Component {
                 username={this.props.currentUser.username}
                 name={this.props.currentUser.name}/>
             </div>
-            <h2>Featured Users</h2>
+            <h2 className='featured-user-head'>Featured Users</h2>
             <div className='user-profiles'>
               <ul>
                 {users}
