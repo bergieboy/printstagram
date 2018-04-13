@@ -36,13 +36,15 @@ Instagram allows you to share your experiences through photos.
 - Body of comments are displayed adjacent to the author's username.
 - Comment button redirects to comment input. see the following code:
 
-	    getFocus() {
-	        document.getElementById("comment-input").focus();
-	    }
-      <button
-        ref={(input)=> {commentInput = input;}}
-        className="far fa-comment"
-        onClick={()=>this.getFocus()}/>  
+```javascript
+  getFocus() {
+      document.getElementById("comment-input").focus();
+  }
+  <button
+    ref={(input)=> {commentInput = input;}}
+    className="far fa-comment"
+    onClick={()=>this.getFocus()}/>  
+```
 
 ### User Profile
 - A users profile displays all of their photos.
