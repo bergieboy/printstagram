@@ -22,4 +22,10 @@ class Photo < ApplicationRecord
     self.likes.length
   end
 
+  def timestamp
+    time = Time.now.self.created_at.to_f
+  end
+    
+
+
 end

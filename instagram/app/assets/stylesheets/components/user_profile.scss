@@ -143,12 +143,17 @@
   .profile-photo-index-ul {
     width: 100%;
     margin-bottom: 28px;
-    display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 293px);
+    grid-gap: 1.6em;
+    justify-content: center;
+
+    list-style: none;
+    width: 100%;
+    margin: 0 auto;
 
     li {
-      margin-bottom: 20px;
       max-width: 293px;
       max-height: 293px;
       overflow: hidden;

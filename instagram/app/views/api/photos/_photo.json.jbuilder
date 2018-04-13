@@ -1,4 +1,4 @@
-json.extract! photo, :id, :author_id
+json.extract! photo, :id, :author_id, :created_at
 json.img_url asset_path(photo.img_url.url)
 json.currentUserLikes !!photo.likes.find_by(user_id: current_user.id)
 json.likes photo.likes
