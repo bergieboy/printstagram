@@ -23,9 +23,36 @@ class Photo < ApplicationRecord
   end
 
   def timestamp
-    time = Time.now.self.created_at.to_f
-  end
-    
+    if self.created_at.strftime("%Y") == Time.now.strftime("%Y")
+      mdy =  self.created_at.strftime("%B %d")
+    else
+      mdy = self.created_at.strftime("%B %d, %Y")
+    end
+    #delta in seconds
+    delta = (Time.now.to_i - self.created_at.to_i)
 
+    s_per_minute = 60
+    s_per_hour = s_per_minute * 60
+    s_per_day = s_per_hour * 24
+    s_per_week = s_per_day * 7
+
+    if delta < s_per_minute
+      timestamp = "#{(delta).floor} seconds ago"
+    elsif delta < s_per_hour
+      timestamp = "#{(delta / s_per_minute).floor} minutes ago"
+    elsif delta < s_per_day
+      if delta < (s_per_hour * 2)
+        timestamp = "#{(delta / s_per_hour).floor} hour ago"
+      else
+        timestamp = "#{(delta / s_per_hour).floor} hours ago"
+      end
+    elsif delta < s_per_week
+      timestamp = "#{(delta / s_per_day).floor} days ago"
+    else
+      timestamp = mdy
+    end
+
+    timestamp
+  end
 
 end

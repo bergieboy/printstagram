@@ -25,6 +25,20 @@ class CommentIndex extends React.Component {
     .then(() => this.setState({body: ""}));
   }
 
+  toggleDelete(userId){
+    let deleteClass;
+    if (
+      (this.props.currentUser.id === userId)
+      || (this.props.currentUser.id === this.props.photo.user_id)
+    ) {
+      deleteClass = 'visible';
+    } else {
+      deleteClass = 'hidden';
+    }
+    console.log(deleteClass)
+    return deleteClass;
+  }
+
   commentRender(){
     let comments = this.props.comments
     .filter( comment =>
@@ -39,7 +53,12 @@ class CommentIndex extends React.Component {
             <h1>{comment.user_username}</h1>
             <p>{comment.body}</p>
           </div>
-          <button onClick={()=> this.props.deleteComment(comment.id)}>x</button>
+          <div className={this.toggleDelete(comment.user_id)}>
+            <button
+              onClick={()=> this.props.deleteComment(comment.id)}>
+              x
+            </button>
+          </div>
         </li>
       );
     });
@@ -56,6 +75,7 @@ class CommentIndex extends React.Component {
         <ul className='comments-ul'>
           {comments}
         </ul>
+        <div className ='time-stamp'>{this.props.photo.timeStamp}</div>
         <form onSubmit={this.handleSubmit}>
           <label className='comment-body-input'>
             <input
