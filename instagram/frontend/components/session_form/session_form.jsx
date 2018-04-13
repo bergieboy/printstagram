@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   update(field){
@@ -22,6 +23,11 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = merge({}, this.state);
     this.props.processForm(user);
+  }
+
+  handleDemo(e){
+    e.preventDefault();
+    this.props.demoLogin();
   }
 
   renderErrors() {
@@ -40,7 +46,6 @@ class SessionForm extends React.Component {
   }
 
   render(){
-    console.log(this.props.errors);
     return (
       <div className='session_master'>
         <div className = 'session_img'>
@@ -81,7 +86,7 @@ class SessionForm extends React.Component {
                     <strike className = 'strikethrough' ></strike>
                   </div>
                   <div className = 'submit-button'>
-                    <button onClick={() => this.props.demoLogin()}>
+                    <button onClick={this.handleDemo}>
                       Demo Log in
                     </button>
                   </div>

@@ -5,7 +5,6 @@ import { withRouter, Link } from 'react-router-dom';
 class PhotoUpload extends React.Component {
   constructor(props){
     super(props);
-    console.log(this.props);
     this.state = {
       imgUrl: null,
       imgFile: null,

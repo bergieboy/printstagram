@@ -37,7 +37,9 @@
 
       button {
         color: #999;
-
+      }
+      button:hover {
+        font-weight: bold;
       }
     }
   }

@@ -35,7 +35,6 @@ class CommentIndex extends React.Component {
     } else {
       deleteClass = 'hidden';
     }
-    console.log(deleteClass)
     return deleteClass;
   }
 

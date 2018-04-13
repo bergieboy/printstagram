@@ -24,7 +24,6 @@ class UserProfile extends React.Component {
     } else {
       editButton = 'edit-button-hide';
     }
-    console.log(editButton);
     return editButton;
   }
 

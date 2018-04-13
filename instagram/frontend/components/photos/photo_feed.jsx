@@ -5,7 +5,6 @@ import UserAvatar from '../user_profile/user_avatar';
 class PhotoFeed extends React.Component {
   constructor(props){
     super(props);
-    console.log(this.props);
   }
 
   componentDidMount(){
@@ -14,7 +13,6 @@ class PhotoFeed extends React.Component {
 
 
   render () {
-    console.log(this.props);
     const photos = this.props.photos
     .sort((a, b) => b.id - a.id)
     .map( photo => {

@@ -14,14 +14,11 @@ import {
   deleteComment,
 } from '../../actions/comment_actions';
 
-const mapStatetoProps = (state, ownProps) => {
-  console.log(Object.values(selectCommentsForPhoto(state, ownProps.match.params.photoId)));
-  return {
+const mapStatetoProps = (state, ownProps) => ({
     photo: state.entities.photos[ownProps.match.params.photoId],
     comments: selectCommentsForPhoto(state, ownProps.match.params.photoId),
     currentUser: state.session.currentUser,
-  };
-};
+});
 
 const mapDispatchToProps = dispatch => ({
   fetchPhoto: (id) => dispatch(fetchPhoto(id)),
