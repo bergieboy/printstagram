@@ -4,19 +4,23 @@
 
 
 .photo-like-button {
+  display: flex;
   margin-left: 8px;
   padding: 8px;
+  font-size: 24px;
+
+  button {
+    padding-right: 10px;
+  }
 
   .true {
     button {
-      font-size: 24px;
       color: red;
     }
   }
 
   .false {
     button {
-      font-size: 24px;
       color: #262626cf;
     }
   }

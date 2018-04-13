@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import UserAvatar from '../user_profile/user_avatar';
-import { PhotoLikes } from '../likes/photo_likes';
+import PhotoLikes from '../likes/photo_likes';
 import CommentIndex from '../comments/comments_index';
 
 class PhotoShow extends React.Component {
