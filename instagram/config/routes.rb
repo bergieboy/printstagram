@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'comments/index'
-
-  get 'comments/create'
-
-  get 'comments/destroy'
-
   namespace :api, defaults: { format: :json } do
     resources :users do
       resources :photos, only: [:index]
