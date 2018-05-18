@@ -17,6 +17,22 @@ class User < ApplicationRecord
 
   has_many :comments
 
+  has_many :user_followers,
+    class_name: :Follow,
+    foreign_key: :following_id
+
+  has_many :user_followings,
+    class_name: :Follow,
+    foreign_key: :follower_id
+
+  has_many :followers,
+    through: :user_followers,
+    source: :follower
+
+  has_many :followees,
+    through: :user_followings,
+    source: :followee
+
   attr_reader :password
 
   def photo_count
