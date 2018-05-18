@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:destroy]
     resources :likes, only: [:create]
     delete '/likes', to: 'likes#destroy'
+    resources :follows, only: %i[create destroy]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -11,8 +11,7 @@ render() {
   return (
       <li className = 'profile-photo-index-li'>
         <Link
-          to={`/photos/${this.props.photo.id}`}
-          onClick={() => this.props.openModal()}>
+          to={`/photos/${this.props.photo.id}`}>
           <img src={this.props.photo.img_url}/>
         </Link>
       </li>
