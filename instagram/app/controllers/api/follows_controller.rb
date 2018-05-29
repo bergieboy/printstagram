@@ -1,9 +1,11 @@
 class Api::FollowsController < ApplicationController
+
+  before_action :require_logged_in
+
   def create
     @follow = Follow.new
     @follow.follower_id = current_user.id
-    @follow.followee_id = params[:id]
-    @user = User.find_by(id: params[:id])
+    @follow.followee_id = params[:followeeId]
     if @follow.save
       render :show
     else
@@ -12,7 +14,10 @@ class Api::FollowsController < ApplicationController
   end
 
   def destroy
-    @follow = Follow.find_by(follower_id: current_user.id, followee_id: params[:id])
+    @follow = Follow.find_by(
+      follower_id: current_user.id,
+      followee_id: params[:followeeId]
+    )
 
     if @follow.destroy
       render :show

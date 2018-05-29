@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ProfilePhotoIndexContainer from '../photos/profile_photo_index_container';
+import FollowButton from './follow_button';
 
 class UserProfile extends React.Component {
   constructor(props){
@@ -17,25 +18,18 @@ class UserProfile extends React.Component {
     }
   }
 
-  editProfileButton(){
-    let editButton;
-    if (this.props.match.params.userId == this.props.currentUser.id) {
-      editButton = 'edit-button';
-    } else {
-      editButton = 'edit-button-hide';
-    }
-    return editButton;
-  }
-
 
   render() {
-    const { userProf } = this.props;
+    const { userProf, currentUser } = this.props;
+
 
     if (!userProf) {
       return (
         <div>Loading...</div>
       );
     }
+
+
     return (
       <div>
         <div className='main-content'>
@@ -49,15 +43,21 @@ class UserProfile extends React.Component {
               <section className='user-info'>
                 <div className='user-info-header'>
                   <h1>{userProf.username}</h1>
-                  <Link className={this.editProfileButton()} to={`/${userProf.id}/edit`}>Edit Profile</Link>
+                  <FollowButton
+                    user={userProf}
+                    currentUser={currentUser}
+                    createFollow={this.props.createFollow}
+                    deleteFollow={this.props.deleteFollow}
+                    followed={userProf.followed}
+                    />
                   <button
                     className="logout-button"
                     onClick={() => this.props.logout().then(()=>this.props.history.push('/login'))}>Log Out</button>
                 </div>
                 <ul className='user-stats'>
                   <li><span>{userProf.photo_count}</span> photos</li>
-                  <li><span>8</span> followers</li>
-                  <li><span>8</span> following</li>
+                  <li><span>{userProf.followers_by_id.length}</span> followers</li>
+                  <li><span>{userProf.followings_by_id.length}</span> following</li>
                 </ul>
                 <div className='user-bio'>
                   <h1>{userProf.name}</h1>

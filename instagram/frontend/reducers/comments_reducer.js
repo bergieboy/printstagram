@@ -28,7 +28,7 @@ const commentsReducer = (state = {}, action) => {
     case RECEIVE_PHOTOS:
       return merge({}, state, action.payload.comments);
     case RECEIVE_PHOTO:
-      return merge({}, state, action.comments)
+      return merge({}, state, action.comments);
 
     case RECEIVE_USER:
       return merge({}, action.payload.comments);
