@@ -6,7 +6,8 @@ import {selectPhotosForUser} from '../../selectors/photo_selector';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStatetoProps = (state, ownProps) => {
-  return {photos: selectPhotosForUser(state, ownProps.userId),
+  return {
+    photos: selectPhotosForUser(state, ownProps.userId),
     profileUser: ownProps.userId,};
 };
 

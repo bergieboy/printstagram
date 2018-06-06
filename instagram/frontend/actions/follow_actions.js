@@ -19,7 +19,6 @@ export const createFollow = userId => dispatch => (
 );
 
 export const deleteFollow = userId => dispatch => {
-  console.log(userId);
   return (
   APIUtil.deleteFollow(userId)
   .then( payload => dispatch(removeFollow(payload)))

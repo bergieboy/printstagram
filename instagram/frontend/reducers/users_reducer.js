@@ -9,6 +9,7 @@ const usersReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_USERS:
       return merge({}, action.users);
+
     case RECEIVE_USER:
       return merge(
         {},
@@ -17,7 +18,6 @@ const usersReducer = (state = {}, action) => {
       );
 
     case RECEIVE_FOLLOW:
-      console.log(action.payload.user);
       return merge(
         {},
         state,
@@ -26,8 +26,8 @@ const usersReducer = (state = {}, action) => {
 
     case REMOVE_FOLLOW:
       let newState = merge({}, state);
-      console.log(newState[action.payload.user]);
-      delete newState[action.payload.user].followers_by_id.filter(id => id !== action.payload.follow.id);
+      newState = merge({}, state, newState[action.payload.user.id].followers_by_id.filter(id => id !== action.payload.follow.id));
+      console.log(newState);
       return newState;
 
     default:

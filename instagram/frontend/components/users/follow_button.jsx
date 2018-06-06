@@ -1,15 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 class FollowButton extends React.Component {
   constructor(props){
     super(props);
   }
 
+  componentWillReceiveProps(newProps){
+    if (this.props.followed) {
+      this.props.fetchUser(newProps.user.id);
+    }
+  }
+
   render () {
 
     let button;
-    console.log(this.props.followed);
     if (this.props.user.id === this.props.currentUser.id) {
       return (
         <Link className='edit-button' to={`/${this.props.user.id}/edit`}>Edit Profile</Link>

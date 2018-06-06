@@ -12,18 +12,15 @@ const followsReducer = (state = {}, action) => {
   switch (action.type) {
 
     case RECEIVE_FOLLOW:
-      console.log(action.payload.follow);
       return merge({}, state, { [action.payload.follow.id]: action.payload.follow });
 
     case REMOVE_FOLLOW:
-      console.log(action.payload.follow);
-
       let newState = merge({}, state);
       delete newState[action.payload.follow.id];
       return newState;
 
     case RECEIVE_USER:
-      return merge({}, action.payload.follows);
+      return merge({}, action.payload.follow);
 
     default:
       return state;

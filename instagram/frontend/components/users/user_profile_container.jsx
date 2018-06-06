@@ -5,10 +5,12 @@ import { fetchUser } from '../../actions/user_actions';
 import { createFollow, deleteFollow } from '../../actions/follow_actions';
 
 
-const mapStateToProps = (state, ownProps) => ({
-  userProf: state.entities.users[ownProps.match.params.userId],
-  currentUser: state.session.currentUser,
-});
+const mapStateToProps = (state, ownProps) => {
+  return (
+    {userProf: state.entities.users[ownProps.match.params.userId],
+    currentUser: state.session.currentUser}
+  );
+};
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
