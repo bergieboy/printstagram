@@ -20,7 +20,7 @@ const followsReducer = (state = {}, action) => {
       return newState;
 
     case RECEIVE_USER:
-      return merge({}, action.payload.follow);
+      return merge({}, action.payload.user);
 
     default:
       return state;

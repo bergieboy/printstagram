@@ -13,15 +13,8 @@ class UserProfile extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-    let user1 = this.props.userProf;
-    let user2 = newProps.userProf;
-    console.log(user1);
-    console.log(user2);
     if (newProps.match.params.userId !== this.props.match.params.userId) {
       this.props.fetchUser(newProps.match.params.userId);
-    } else if (user1) {
-      console.log(user1.followers_by_id);
-
     }
   }
 
@@ -36,7 +29,6 @@ class UserProfile extends React.Component {
       );
     }
 
-    console.log(this.props);
     return (
       <div>
         <div className='main-content'>

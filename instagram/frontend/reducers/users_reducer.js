@@ -26,8 +26,10 @@ const usersReducer = (state = {}, action) => {
 
     case REMOVE_FOLLOW:
       let newState = merge({}, state);
-      newState = merge({}, state, newState[action.payload.user.id].followers_by_id.filter(id => id !== action.payload.follow.id));
-      console.log(newState);
+      newState[action.payload.user.id]
+        .followers_by_id = newState[action.payload.user.id]
+        .followers_by_id
+        .filter(id => id !== action.payload.follow.id);
       return newState;
 
     default:
